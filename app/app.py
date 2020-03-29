@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 def load_model():
     global model
-    with open('../../model/model.pkl', 'rb') as f:
+    with open('../model/model.pkl', 'rb') as f:
         model = pickle.load(f)
         print("model loaded")
 
