@@ -45,8 +45,6 @@ def process_input(data):
     data['Foggy Weather'] = 0
     data['Severly Windy Weather'] = 0
     data['Blowing Sand Weather'] = 0
-    data['Other Weather'] = 0
-    data['Cloudy Weather'] = 0
 
     # convert to dataframe for easy processing
     df = pd.DataFrame([data])
