@@ -55,7 +55,7 @@ def process_input(data):
     helmet_value = {'Yes' : 0, 'No' : 1}
 
     # perform mapping of values
-    df.replace({'Helmet Use': helmet_value, inplace=True)
+    df.replace({'Helmet Use': helmet_value}, inplace=True)
 
     # map the dummy variables to the appropriate encoded column
     gender_value = df['Gender']
@@ -73,7 +73,7 @@ def process_input(data):
     df[weather_value] = 1
 
     # drop the dummy variable fields
-    df = df.drop('Gender','Drugs','Alcohol','Month','Weekday','Weather' axis=1)
+    df = df.drop(['Gender','Drugs','Alcohol','Month','Weekday','Weather'], axis=1)
 
     return df
 
