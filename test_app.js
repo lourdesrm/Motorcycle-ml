@@ -26,19 +26,20 @@
 //-------------------------------------------------------------------------------------------------------------------------//
 var path = 'Cleaned/Master_filtered.json'
 d3.json(path).then(function(data){
-    var weather = data.WEATHER;
-    var injury = data.PERSONS;
-    console.log(injury)
+    
+    var weather = data.map(d=>d.WEATHER);
+    var accident = data.map(d=>d.PER_TYP);
+        console.log(weather)
 
     var trace = {
-        x: injury,
-        y: weather,
+        x: weather,
+        y: accident,
         type: "bar",
         transforms: {
             type: 'aggregate',
             groups: weather,
             aggregations: 
-              {target: 'y', func: 'count', enabled: true},
+              {target: 'y', func: 'sum', enabled: true},
             
           }
     };
