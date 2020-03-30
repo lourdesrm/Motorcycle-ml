@@ -6,22 +6,20 @@ d3.json(path).then(function(data){
     var accident = data.map(d=>d.PER_TYP);
         console.log(weather)
 
-    var trace = {
-        x: weather,
-        y: accident,
-        type: "bar",
-        transforms: {
-            type: 'aggregate',
-            groups: weather,
-            aggregations: 
-              {target: 'y', func: 'sum', enabled: true},
-            
-          }
+    var data1 = {
+            type: 'bar',
+            x: weather,
+            y: accident,
+            // mode: 'lines+markers',
+            transforms: [{
+             type: 'aggregate',
+             groups: weather,
+             aggregations: [
+                {target: 'y', func: 'sum', enabled: true},
+        ]
+      }]
     };
 
-    var data = [trace];
-    var layout = {
-        title: "Test 1"
-    };
-    Plotly.newPlot("plot", data, layout);
+    var traces = [data1]
+    Plotly.newPlot("plot", traces);
 })
