@@ -14,6 +14,9 @@
 <link href="style/css/color/green.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <link href="style/type/fontello.css" rel="stylesheet">
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
 <!--[if IE 8]>
 <link rel="stylesheet" type="text/css" href="style/css/ie8.css" media="all" />
 <![endif]-->
@@ -211,6 +214,9 @@
   </div>
  
 
+  <!-- ####################################### -->
+  <!--  DASHBOARD PLOTS -->
+
   <section id="showcase" class="light-wrapper">
     <div class="section-head">
       <div class="container">
@@ -222,7 +228,7 @@
     <div class="container showcase-wrapper">
       <div class="inner">
         <p class="lead">We will plot many different varibales joihfigjgpojpjvp  opogotrgrtogpokgpodfpojdfpojgjdjds[jiodfj</p>
-        <div class="divide30"></div>
+        <!-- <div class="divide30"></div> -->
         <!-- <ul class="filter">
           <li><a class="active" href="#" data-filter="*">All</a></li>
           <li><a href="#" data-filter=".branding">Branding</a></li>
@@ -231,88 +237,110 @@
           <li><a href="#" data-filter=".video">Video</a></li>
         </ul> -->
         <!-- /.filter -->
+
+        
+  <div class="container" id="searchengine">
+    <div class="input">
+      <div class="col-sm-0">
+      </div>
+      <div class="col-sm-6">
+          <div class="box page-title"><h3>City:</h3></div>
+          <div class="box page-title"><h3>County:</h3></div>
+          <div class="box page-title"><h3>Year:</h3></div>
+      </div>
+      <div class="col-sm-3">
+      </div>
+
         
         <ul class="items thumbs">
-          <li class="item thumb branding"> <a href="#" data-contenturl="portfolio-post.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+          <li class="item thumb branding"> <a href="#" data-contenturl="portfolio-plots.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
             <div class="overlay">
               <div class="info">
-                <h4>Headlight Media</h4>
-                <span>Logo, Branding</span> </div>
+                <h4>Number of Total Accidents</h4>
+                <span>Over 3500!</span> </div>
               <!-- /.info --> 
             </div>
             <!-- /.overlay --> 
-            <img src="style/images/art/p1.jpg" alt="" /></a> </li>
+            <img src="style/images/test.jpg" alt="" /></a> </li>
           <!-- /.item -->
-          <li class="item thumb illustration"> <a href="#" data-contenturl="portfolio-post2.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+          
+          <li class="item thumb illustration"> <a href="#" data-contenturl="portfolio-plots.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
             <div class="overlay">
               <div class="info">
-                <h4>Media Icons</h4>
-                <span>Icons, Vector</span> </div>
+                <h4>Number of Fatal Accidents</h4>
+                <span>Over 2500!</span> </div>
               <!-- /.info --> 
             </div>
             <!-- /.overlay --> 
             <img src="style/images/art/p2.jpg" alt="" /></a> </li>
           <!-- /.item -->
-          <li class="item thumb poster illustration"> <a href="#" data-contenturl="portfolio-post.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+          
+          <li class="item thumb poster illustration"> <a href="#" data-contenturl="portfolio-plots.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
             <div class="overlay">
               <div class="info">
-                <h4>Quizzical Lumberjack</h4>
-                <span>Illustration, Hackathon</span> </div>
+                <h4>Type of Injuries</h4>
+                <span>Mostly Fatal once in an accident</span> </div>
               <!-- /.info --> 
             </div>
             <!-- /.overlay --> 
             <img src="style/images/art/p3.jpg" alt="" /></a> </li>
           <!-- /.item -->
-          <li class="item thumb illustration"> <a href="#" data-contenturl="portfolio-post2.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+          
+          <li class="item thumb illustration"> <a href="#" data-contenturl="portfolio-plots.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
             <div class="overlay">
               <div class="info">
-                <h4>Hacked</h4>
-                <span>Illustration, Vector</span> </div>
+                <h4>Accidents Ocurrency by Day of Week</h4>
+                <span>Be careful during weekends</span> </div>
               <!-- /.info --> 
             </div>
             <!-- /.overlay --> 
             <img src="style/images/art/p4.jpg" alt="" /></a> </li>
           <!-- /.item -->
-          <li class="item thumb branding"> <a href="#" data-contenturl="portfolio-post.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+         
+          <li class="item thumb branding"> <a href="#" data-contenturl="portfolio-plots.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
             <div class="overlay">
               <div class="info">
-                <h4>Hackathon Icons</h4>
-                <span>Icons, Illustration</span> </div>
+                <h4>Accidents Ocurrency by Intersection Type</h4>
+                <span>Accidents happens No just at intersections</span> </div>
               <!-- /.info --> 
             </div>
             <!-- /.overlay --> 
             <img src="style/images/art/p5.jpg" alt="" /></a> </li>
           <!-- /.item -->
-          <li class="item thumb branding"> <a href="#" data-contenturl="portfolio-post2.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+          
+          <li class="item thumb branding"> <a href="#" data-contenturl="portfolio-plots.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
             <div class="overlay">
               <div class="info">
-                <h4>B is for Books</h4>
-                <span>Logo, Branding</span> </div>
+                <h4>Accidents Ocurrency by Weather Condition</h4>
+                <span>Clear day? be careful!</span> </div>
               <!-- /.info --> 
             </div>
             <!-- /.overlay --> 
             <img src="style/images/art/p6.jpg" alt="" /></a> </li>
           <!-- /.item -->
-          <li class="item thumb branding poster"> <a href="#" data-contenturl="portfolio-post.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+          
+          <li class="item thumb branding poster"> <a href="#" data-contenturl="portfolio-plots.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
             <div class="overlay">
               <div class="info">
-                <h4>Wildfire Ambigram</h4>
-                <span>Logo, Typography</span> </div>
+                <h4>Accident Ocurrency by Alcohol Presence</h4>
+                <span>Do not drink and drive!</span> </div>
               <!-- /.info --> 
             </div>
             <!-- /.overlay --> 
             <img src="style/images/art/p7.jpg" alt="" /></a> </li>
           <!-- /.item -->
-          <li class="item thumb video"> <a href="#" data-contenturl="portfolio-post3.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+          
+          <li class="item thumb video"> <a href="#" data-contenturl="portfolio-plots.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
             <div class="overlay">
               <div class="info">
-                <h4>All Tied Up</h4>
-                <span>Branding, Illustration</span> </div>
+                <h4>Fatality count by Helmet Use</h4>
+                <span>Use Helmet!</span> </div>
               <!-- /.info --> 
             </div>
             <!-- /.overlay --> 
             <img src="style/images/art/p8.jpg" alt="" /></a> </li>
-          <!-- /.item -->
+          
+            <!-- /.item -->
         </ul>
         <!--/.items--> 
       </div>
@@ -321,6 +349,11 @@
     <!--/.container--> 
   </section>
   <!--/#showcase-->
+
+
+
+  <!-- ############################# -->
+  <!--  PREDICTOR -->
   
   <section id="lightbox" class="light-wrapper">
     <div class="section-head">
