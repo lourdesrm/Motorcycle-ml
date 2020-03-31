@@ -38,7 +38,31 @@ var data2 = {
   }]
 };
 
+
+// Layout
+
+var layout = {
+  //title: "Climate Chart",
+    xaxis: { 
+    title: {text:'Year',
+    font:{ color: 'green', size: 20 } },
+    tickfont: {
+      color: 'lightgreen',
+        }
+          },
+    yaxis: { 
+    title: {text:'Number of Accidents',
+    font:{ color: 'green', size: 20 } },
+    autorange: true, 
+    tickfont: {
+    color: 'lightgreen',
+        },
+    gridcolor:"lightgreen"
+    },
+  }
+// End Layout
+
 var traces = [data1, data2]
 
-Plotly.newPlot("plot", traces)
+Plotly.newPlot("plot", traces, layout);
 });
