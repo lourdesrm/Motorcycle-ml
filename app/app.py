@@ -6,36 +6,46 @@ import pandas as pd
 app = Flask(__name__)
 
 def load_model():
-    global model
-    with open('../model/model.pkl', 'rb') as f:
-        model = pickle.load(f)
-        print("model loaded")
+    global month_model
+    with open('../model/month_model.pkl', 'rb') as f:
+        month_model = pickle.load(f)
+        print("month_model loaded")
 
-def process_input(data):
+    global weekday_model
+    with open('../model/weekday_model.pkl', 'rb') as f:
+        weekday_model = pickle.load(f)
+        print("weekday_model loaded")
+
+def process_input(data, date_type):
     
+    if date_type=='month':
+        data['January'] = 0
+        data['February'] = 0
+        data['March'] = 0
+        data['April'] = 0
+        data['May'] = 0
+        data['June'] = 0
+        data['July'] = 0
+        data['August'] = 0
+        data['September'] = 0
+        data['October'] = 0
+        data['November'] = 0
+        data['December'] = 0
+
+    else:
+
+        data['Sunday'] = 0
+        data['Monday'] = 0
+        data['Tuesday'] = 0
+        data['Wednesday'] = 0
+        data['Thursday'] = 0
+        data['Friday'] = 0
+        data['Saturday'] = 0
+
     # add empty keys for dummy-encoded property areas
     data['Male'] = 0
     data['Female']=0
     data['Gender Neutral'] = 0
-    data['January'] = 0
-    data['February'] = 0
-    data['March'] = 0
-    data['April'] = 0
-    data['May'] = 0
-    data['June'] = 0
-    data['July'] = 0
-    data['August'] = 0
-    data['September'] = 0
-    data['October'] = 0
-    data['November'] = 0
-    data['December'] = 0
-    data['Sunday'] = 0
-    data['Monday'] = 0
-    data['Tuesday'] = 0
-    data['Wednesday'] = 0
-    data['Thursday'] = 0
-    data['Friday'] = 0
-    data['Saturday'] = 0
     data['No Drugs'] = 0
     data['Drug Use Reported'] = 0
     data['No Drinking'] = 0
@@ -59,19 +69,19 @@ def process_input(data):
     gender_value = df['Gender']
     drugs_value = df['Drugs']
     alcohol_value = df['Alcohol']
-    month_value = df['Month']
-    weekday_value = df['Weekday']
+    # month_value = df['Month']
+    #weekday_value = df['Weekday']
     weather_value = df['Weather']
 
     df[gender_value] = 1
     df[drugs_value] = 1
     df[alcohol_value] = 1
-    df[month_value] = 1
-    df[weekday_value] = 1
+    # df[month_value] = 1
+    #df[weekday_value] = 1
     df[weather_value] = 1
 
     # drop the dummy variable fields
-    df = df.drop(['Gender','Drugs','Alcohol','Month','Weekday','Weather'], axis=1)
+    df = df.drop(['Gender','Drugs','Alcohol','Weather'], axis=1)
 
     return df
 
@@ -79,9 +89,45 @@ def process_input(data):
 def index():
     if request.method == 'POST':
         input_data = request.form.to_dict()
-        data = process_input(input_data)
-        value = model.predict(data)
-        return render_template('index.html', result=value)
+        month_list = ['January', 'February', 'March', 'April', 'May','June', 'July', 'August','September','October','November','December']
+        weekday_list = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday']
+        
+        
+        # add the type of model
+        data_month = process_input(data = input_data, date_type="month")
+
+        day_inj_rtgs = []
+        day_dth_rtgs = []
+        day_safe_rtgs = []
+
+        month_inj_rtgs = []
+        month_dth_rtgs = []
+        month_safe_rtgs = []
+
+
+        # MONTHLY RESULTS
+        for month in month_list :
+            data_month[month_list] = 0
+            data_month[month] = 1
+            results = month_model.predict_proba(data_month)
+            month_safe_rtgs.append(results[0][0])
+            month_inj_rtgs.append(results[0][1])
+            month_dth_rtgs.append(results[0][2])
+
+        # DAILY RESULTS
+        input_data = request.form.to_dict()
+        data_daily = process_input(data = input_data, date_type="daily")
+        for wkd in weekday_list :
+            data_daily[weekday_list] = 0
+            data_daily[wkd] = 1
+            results = weekday_model.predict_proba(data_daily)
+            day_safe_rtgs.append(results[0][0])
+            day_inj_rtgs.append(results[0][1])
+            day_dth_rtgs.append(results[0][2])
+
+        return jsonify({"daily":{"Injury": day_inj_rtgs, "Death": day_dth_rtgs, "Safe": day_safe_rtgs},
+                        "monthly":{"Injury": month_inj_rtgs, "Death": month_dth_rtgs, "Safe": month_safe_rtgs}}
+        )
 
     return render_template('index.html')
 
