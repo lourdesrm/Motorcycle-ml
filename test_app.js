@@ -1,4 +1,6 @@
 //-------------------------------------------------------------------------------------------------------------------------//
+// var selPlot = document.getElementById('plot');
+d3.select("#plot").append('div')
 var path = 'Cleaned/Master_filtered.json'
 d3.json(path).then(function(data){
     
