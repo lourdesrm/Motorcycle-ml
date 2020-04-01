@@ -85,10 +85,12 @@ def process_input(data, date_type):
 
     return df
 
+global responseData
+responseData = {}
 # # create route that renders index.html template
-# @app.route("/")
-# def home():
-#     return render_template("index.html")
+@app.route("/data")
+def funcdata():
+    return jsonify([responseData])
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -129,12 +131,14 @@ def index():
             day_safe_rtgs.append({wkd:results[0][0]})
             day_inj_rtgs.append({wkd:results[0][1]})
             day_dth_rtgs.append({wkd:results[0][2]})
-
-        return jsonify({"daily":{"Injury": day_inj_rtgs, "Death": day_dth_rtgs, "Safe": day_safe_rtgs},
+        
+        global responseData
+        responseData = {"daily":{"Injury": day_inj_rtgs, "Death": day_dth_rtgs, "Safe": day_safe_rtgs},
                         "monthly":{"Injury": month_inj_rtgs, "Death": month_dth_rtgs, "Safe": month_safe_rtgs}}
-        )
 
-    return render_template('index.html')
+        # return jsonify()
+
+    return render_template('index_las.html')
 
 if __name__ == "__main__":
     load_model()

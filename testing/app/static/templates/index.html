@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Motorcycle Safety</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link type="image/x-icon" href="../images/favicon.png" />
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="../css/settings.css" rel="stylesheet">
+<link href="../js/google-code-prettify/prettify.css" rel="stylesheet">
+<link href="../../style.css" rel="stylesheet">
+<link href="../css/color/green.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href="../type/fontello.css" rel="stylesheet">
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="../css/ie8.css" media="all" />
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="../js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body data-spy="scroll" data-target=".nav-collapse" data-offset="100">
+<div class="body-wrapper">
+  <div id="header" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container"> <a class="btn responsive-menu pull-right" data-toggle="collapse" data-target=".nav-collapse"><i class='icon-menu-1'></i></a> <a class="brand" href="index.html"><img src="../images/Picture1.png" alt="" /></a>
+        <div class="nav-collapse pull-right collapse">
+          <ul class="nav">
+            <li><a href="#home">Home</a></li>
+            <li class="dropdown"> <a href="#about" class="dropdown-toggle js-activated">About</a>
+              <ul class="dropdown-menu">
+                <li><a href="#about">About This Project</a></li>
+                <li><a href="#team">Team</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"> <a href="#showcase" class="dropdown-toggle js-activated">Motorcycle Accident Plots</a>
+              <ul class="dropdown-menu">
+                <!-- <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#lightbox">Lightbox</a></li>
+                <li><a href="#gallery">Gallery</a></li> -->
+              </ul>
+            </li>
+            <li class="dropdown"> <a href="#lightbox" class="dropdown-toggle js-activated">Severity Injury Predictor</a>
+                <ul class="dropdown-menu">
+                  <!-- <li><a href="#showcase">Showcase</a></li>
+                  <li><a href="#lightbox">Lightbox</a></li>
+                  <li><a href="#gallery">Gallery</a></li> -->
+                </ul>
+              </li>
+            <li><a href="#contact">Get In Touch</a></li>
+           
+          </ul>
+        </div>
+        <!-- .nav-collapse --> 
+      </div>
+      <!-- .container --> 
+    </div>
+    <!-- .navbav-inner --> 
+  </div>
+  <!-- .navbar -->
+  <section id="home" class="offset">
+    <div class="fullwidthbanner-container revolution">
+      <div class="fullwidthbanner">
+        <ul>
+          <li data-transition="fade"> <img src="../images/group.jpg" alt="" />
+            <div class="caption sfl bold bg text-center" data-x="center" data-y="220" data-speed="500" data-start="500" data-easing="easeOutExpo">Texas Motorcycle Safety Genius</div>
+            <div class="caption sfr lite bg text-center" data-x="center" data-y="359" data-speed="500" data-start="900" data-easing="easeOutExpo">A motorcyclist safety tool</div>
+          </li>
+        </ul>
+
+      <!-- /.fullscreen-banner --> 
+    </div>
+    <!-- /.fullscreen-container --> 
+  </section>
+  
+  
+  
+  <!-- #home -->
+  <section id="about" class="light-wrapper">
+    <div class="section-head">
+      <div class="container">
+        <h1>About This Project</h1>
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section-head -->
+    <div class="container inner">
+      <div class="row">
+        <div class="span3 rp10"> <img src="../images/accident2.jpeg" class="round" alt="" /> </div>
+        <!-- /.span3 -->
+        <div class="span9">
+          <div class="divide10"></div>
+          <p class="lead"> Riding a motorcycle is about freedom, passion and live. But it is also about taken calculated risk! </p>
+          <div class="divide10"></div>
+          <p>Our project attempts shed light on many myths about the risks of riding motorcycles. We want to educate current and future motorcycles riders about the real risks and the actions that may considerably mitigate thoses risks analysing availabe data.</p>
+        </div>
+        <!-- /.span9 --> 
+      </div>
+      <!-- /.row -->
+      
+      <div class="divide80"></div>
+      <div class="row">
+        <div class="span6">
+          <h6>What We Do?</h6>
+          <p>We use data to learn and predict future outcomes on whatever question where we want put our atention. </p>
+          <p>We ensure you that our data sources are reliable and our analysis strong.</p>
+        </div>
+        <!-- /.span4 -->
+        <div class="span6">
+          <h6>What is Our Process?</h6>
+          <p>Duis mollis, est non commodo luctus, nisi porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.</p>
+          <ol>
+            <li>Vivamus sagittis lacus vel augue laoreet rutrum.</li>
+            <li>Cras mattis consectetur purus sit amet fermentum.</li>
+            <li>Vestibulum id ligula porta felis euismod semper.</li>
+            <li>Nulla vitae elit libero, a pharetra augue.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!-- /.container --> 
+  </section>
+  <!-- /#about -->
+  <section id="team" class="dark-wrapper">
+    <div class="section-head">
+      <div class="container">
+        <h1>Meet the Team</h1>
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section-head -->
+    <div class="container inner">
+      <div class="divide20"></div>
+      <div class="row text-center">
+        <div class="span3"> <img src="../images/Lourd.jpg" class="round small" alt="" />
+          <div class="divide25"></div>
+          <div class="box arrow">
+            <h4>Lourdes Milano</h4>
+            <h6 class="light">Geoscientist</h6>
+            <div class="divide10"></div>
+            <div class="divide5"></div>
+          </div>
+          <!-- /.box --> 
+        </div>
+        <!-- /.span4 -->
+        <div class="span3"> <img src="../images/Ben.jpg" class="round small" alt="" />
+          <div class="divide25"></div>
+          <div class="box arrow">
+            <h4>Ben Bastedo</h4>
+            <h6 class="light">Procurement Manager</h6>
+            <div class="divide10"></div>
+            <div class="divide5"></div>
+          </div>
+          <!-- /.box --> 
+        </div>
+        <!-- /.span4 -->
+        <div class="span3"> <img src="../images/Santana.jpg" class="round small" alt="" />
+          <div class="divide25"></div>
+          <div class="box arrow">
+            <h4>Luis Santana</h4>
+            <h6 class="light">Reservoir Engineer</h6>
+            <div class="divide10"></div>
+            <div class="divide5"></div>
+          </div>
+          <!-- /.box --> 
+        </div>
+        <!-- /.span4 --> 
+        <div class="span3"> <img src="../images/Sordo.jpg" class="round small" alt="" />
+            <div class="divide25"></div>
+            <div class="box arrow">
+              <h4>Luis Casas</h4>
+              <h6 class="light">Reservoir Engineer</h6>
+              <div class="divide10"></div>
+              <div class="divide5"></div>
+            </div>
+            <!-- /.box --> 
+          </div>
+          <!-- /.span4 -->
+      </div>
+      <!-- /.row --> 
+    </div>
+    <!-- /.container --> 
+  </section>
+  <!-- /#team -->
+  
+  <div class="parallax testimonials">
+    <div class="container inner text-center">
+      <h2>Our mottos...</h2>
+      <div class="divide10"></div>
+      <div id="our-testimonials" class="testimonials-tab tab-container">
+        <div class="panel-container">
+          <div id="tst1" class="tab-block"> "When you are in doubt, throttle it out!" <span class="author">Lourdes Milano</span> </div>
+          <div id="tst2" class="tab-block"> "The best rides happen on two wheels" <span class="author">Luis Casas</span> </div>
+          <div id="tst3" class="tab-block"> "Be Fast or Be Last!" <span class="author">Luis Santana</span> </div>
+          <div id="tst4" class="tab-block"> "When life throws you a curve, lean into it" <span class="author">Ben Bastedo</span> </div>
+        </div>
+        <!-- /.panel-container -->
+        <ul class="etabs">
+          <li class="tab"><a href="#tst1">1</a></li>
+          <li class="tab"><a href="#tst2">2</a></li>
+          <li class="tab"><a href="#tst3">3</a></li>
+          <li class="tab"><a href="#tst4">4</a></li>
+        </ul>
+        <!-- /.etabs --> 
+      </div>
+      <!-- /.testimonials-tab --> 
+    </div>
+    <!-- /.container --> 
+  </div>
+ 
+
+  <!-- ####################################### -->
+  <!--  DASHBOARD PLOTS                        -->
+  <!-- ####################################### -->
+  <section id="showcase" class="light-wrapper">
+    <div class="section-head">
+      <div class="container">
+        <h1>Motorcycle Accident Plots</h1>
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section-head -->
+    <div class="container showcase-wrapper">
+      <div class="inner">
+        <p class="lead">We will plot many different varibales joihfigjgpojpjvp  opogotrgrtogpokgpodfpojdfpojgjdjds[jiodfj</p>
+        <!-- <div class="divide30"></div> -->
+        <!-- <ul class="filter">
+          <li><a class="active" href="#" data-filter="*">All</a></li>
+          <li><a href="#" data-filter=".branding">Branding</a></li>
+          <li><a href="#" data-filter=".poster">Poster</a></li>
+          <li><a href="#" data-filter=".illustration">Illustration</a></li>
+          <li><a href="#" data-filter=".video">Video</a></li>
+        </ul> -->
+        <!-- /.filter -->
+
+        
+  <!-- <div class="container" id="searchengine">
+    <div class="input">
+      <div class="col-sm-0">
+      </div>
+      <div class="col-sm-6">
+          <div class="box page-title"><h3>City:</h3></div>
+          <div class="box page-title"><h3>County:</h3></div>
+          <div class="box page-title"><h3>Year:</h3></div>
+      </div>
+      <div class="col-sm-3">
+      </div> -->
+
+        
+        <ul class="items thumbs">
+          <li class="item thumb branding"> <a href="#" data-contenturl="portfolio-plot7.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+            <div class="overlay">
+              <div class="info">
+                <h4>Number of Total and 
+                    Fatal Accidents</h4>
+                <span>Click to enlarge chart</span> </div>
+              <!-- /.info --> 
+            </div>
+            <!-- /.overlay --> 
+            <img src="../images/placeholder/ph1.jpg" alt="" /></a> </li>
+          <!-- /.item -->
+          
+          <li class="item thumb illustration"> <a href="#" data-contenturl="portfolio-plot5.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+            <div class="overlay">
+              <div class="info">
+                <h4>Accident Ocurrency and Type of Injuries</h4>
+                <span>Click to enlarge chart</span> </div>
+              <!-- /.info --> 
+            </div>
+            <!-- /.overlay --> 
+            <img src="../images/placeholder/ph2.jpg" alt="" /></a> </li>
+          <!-- /.item -->
+          
+          <li class="item thumb poster illustration"> <a href="#" data-contenturl="portfolio-plot2.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+            <div class="overlay">
+              <div class="info">
+                <h4>Accident Ocurrency by day
+                  of the week</h4>
+                <span>Click to enlarge chart</span> </div>
+              <!-- /.info --> 
+            </div>
+            <!-- /.overlay --> 
+            <img src="../images/placeholder/ph3.jpg" alt="" /></a> </li>
+          <!-- /.item -->
+          
+          <li class="item thumb illustration"> <a href="#" data-contenturl="portfolio-plot6.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+            <div class="overlay">
+              <div class="info">
+                <h4>Accident Ocurrency by Intersection type</h4>
+                <span>Click to enlarge chart</span> </div>
+              <!-- /.info --> 
+            </div>
+            <!-- /.overlay --> 
+            <img src="../images/placeholder/ph4.jpg" alt="" /></a> </li>
+          <!-- /.item -->
+         
+          <li class="item thumb branding"> <a href="#" data-contenturl="portfolio-plot1.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+            <div class="overlay">
+              <div class="info">
+                <h4>Accidents Ocurrency by Weather Condition</h4>
+                <span>Click to enlarge chart</span> </div>
+              <!-- /.info --> 
+            </div>
+            <!-- /.overlay --> 
+            <img src="../images/placeholder/ph5.jpg" alt="" /></a> </li>
+          <!-- /.item -->
+          
+          <li class="item thumb branding"> <a href="#" data-contenturl="portfolio-plot4.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+            <div class="overlay">
+              <div class="info">
+                <h4>Accident Ocurrency by Alcohol Presence</h4>
+                <span>Click to enlarge chart</span> </div>
+              <!-- /.info --> 
+            </div>
+            <!-- /.overlay --> 
+            <img src="../images/placeholder/ph6.jpg" alt="" /></a> </li>
+          <!-- /.item -->
+          
+          <li class="item thumb branding poster"> <a href="#" data-contenturl="portfolio-plot3.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+            <div class="overlay">
+              <div class="info">
+                <h4>Accident Ocurrency by Helmet Use</h4>
+                <span>Click to enlarge chart</span> </div>
+              <!-- /.info --> 
+            </div>
+            <!-- /.overlay --> 
+            <img src="../images/placeholder/ph7.jpg" alt="" /></a> </li>
+          <!-- /.item -->
+          
+          <li class="item thumb video"> <a href="#" data-contenturl="portfolio-plot8.html" data-callback="callPortfolioScripts();" data-contentcontainer=".primary .container">
+            <div class="overlay">
+              <div class="info">
+                <h4>Accident ocurrency location</h4>
+                <span>Click to enlarge chart</span> </div>
+              <!-- /.info --> 
+            </div>
+            <!-- /.overlay --> 
+            <img src="../images/art/p8.jpg" alt="" /></a> </li>
+          
+            <!-- /.item -->
+        </ul>
+        <!--/.items--> 
+      </div>
+      <!--/.inner--> 
+    </div>
+    <!--/.container--> 
+  </section>
+  <!--/#showcase-->
+
+
+
+  <!-- ############################# -->
+  <!--  PREDICTOR -->
+  
+  <section id="lightbox" class="light-wrapper">
+    <div class="section-head">
+      <div class="container">
+        <h1>Severity Injury Predictor</h1>
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section-head -->
+    <div class="container lightbox-wrapper">
+      <div class="inner">
+        <p class="lead">Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <div class="divide30"></div>
+        <!-- <li data-transition="fade"><iframe src="../app/templates/index.html" width="1170" height="600"></iframe></li> -->
+        <h1>Severe Injury Ratings Form:</h1>
+        <form method=post enctype=multipart/form-data>
+          <label for="Age">What is your Age?:</label>
+          <input type="text" id="Age" name="Age"><br>
+          <label for="Gender">What is your Gender?:</label>
+          <select id="Gender" name="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select><br>
+          <label for="Previous Accident">Number of Previous Accidents? (0-99):</label>
+          <input type="text" id="Previous Accident" name="Previous Accident"><br>
+          <label for="Previous Speeding"> Number of Previous Speeding Violations? (0-99):</label>
+          <input type="text" id="Previous Speeding" name="Previous Speeding"><br>
+          <label for="Previous DWI">Number of Previous DWI Violations? (0-99):</label>
+          <input type="text" id="Previous DWI" name="Previous DWI"><br>
+          <label for="Drugs">Drug Use?:</label>
+          <select id="Drugs" name="Drugs">
+            <option value="No Drugs">No</option>
+            <option value="Drug Use Reported">Yes</option>
+          </select><br>
+          <label for="Alcohol">Alcohol Intoxication?:</label>
+          <select id="Alcohol" name="Alcohol">
+            <option value="No Drinking">No </option>
+            <option value="Drinking Reported">Yes</option>
+          </select><br>
+          <label for="Helmet Use"> Using Helmet?:</label>
+          <select id="Helmet Use" name="Helmet Use">
+            <option value="No">No </option>
+            <option value="Yes">Yes</option>
+          </select><br>
+          <label for="Weather"> Desired Weather Conditions:</label>
+          <select id="Weather" name="Weather">
+            <option value="Clear Weather">Clear </option>
+            <option value="Rainy Weather">Rainy</option>
+            <option value="Foggy Weather">Foggy</option>
+            <option value="Severly Windy Weather">Severly Windy</option>
+            <option value="Blowing Sand Weather">Blowing Sand</option>
+          </select><br>
+      
+          <input type=submit value=Submit>
+        </form>
+        <script src="../app/static/predict_app.js"></script>
+        <!-- <ul class="filter">
+          <li><a class="active" href="#" data-filter="*">All</a></li>
+          <li><a href="#" data-filter=".branding">Branding</a></li>
+          <li><a href="#" data-filter=".poster">Poster</a></li>
+          <li><a href="#" data-filter=".illustration">Illustration</a></li>
+        </ul> -->
+        <!-- /.filter -->
+     
+        <!-- <ul class="items thumbs"> -->
+          <!-- <li class="item thumb branding"> <a href="../images/art/p1.jpg" class="view" data-rel="lightbox" title="Headlight Media"> -->
+            <!-- <div class="overlay"> -->
+              <!-- <div class="info"> -->
+                <!-- <h4>Headlight Media</h4> -->
+                <!-- <span>Logo, Branding</span> </div> -->
+              <!-- /.info --> 
+            <!-- </div> -->
+            <!-- /.overlay --> 
+            <!-- <img src="../images/art/p1.jpg" alt="" /></a> </li> -->
+          <!-- /.item -->
+          <!-- <li class="item thumb illustration"> <a href="../images/art/p2.jpg" class="view" data-rel="lightbox" title="Media Icons"> -->
+            <!-- <div class="overlay"> -->
+              <!-- <div class="info"> -->
+                <!-- <h4>Media Icons</h4> -->
+                <!-- <span>Icons, Vector</span> </div> -->
+              <!-- /.info --> 
+            <!-- </div> -->
+            <!-- /.overlay --> 
+            <!-- <img src="../images/art/p2.jpg" alt="" /></a> </li> -->
+          <!-- /.item -->
+          <!-- <li class="item thumb poster illustration"> <a href="../images/art/p3.jpg" class="view" data-rel="lightbox" title="Quizzical Lumberjack"> -->
+            <!-- <div class="overlay"> -->
+              <!-- <div class="info"> -->
+                <!-- <h4>Quizzical Lumberjack</h4> -->
+                <!-- <span>Illustration, Hackathon</span> </div> -->
+              <!-- /.info --> 
+            <!-- </div> -->
+            <!-- /.overlay --> 
+            <!-- <img src="../images/art/p3.jpg" alt="" /></a> </li> -->
+          <!-- /.item -->
+          <!-- <li class="item thumb illustration"> <a href="../images/art/p4.jpg" class="view" data-rel="lightbox" title="Hacked"> -->
+            <!-- <div class="overlay"> -->
+              <!-- <div class="info"> -->
+                <!-- <h4>Hacked</h4> -->
+                <!-- <span>Illustration, Vector</span> </div> -->
+              <!-- /.info --> 
+            <!-- </div> -->
+            <!-- /.overlay --> 
+            <!-- <img src="../images/art/p4.jpg" alt="" /></a> </li> -->
+          <!-- /.item -->
+        <!-- </ul> -->
+        <!--/.items--> 
+      </div>
+      <!--/.inner--> 
+    </div>
+    <!--/.container--> 
+  </section>
+  <!--/#lightbox-->
+
+
+    
+
+  <!--/#blog -->
+  
+  <section id="contact">
+    <div class="section-head">
+      <div class="container">
+        <h1>Get In Touch</h1>
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.section-head -->
+    <div class="parallax contact">
+      <div class="container inner">
+        <div class="row">
+          <div class="span0">
+  
+            <!-- /.form-container --> 
+          </div>
+          <!-- /.span8 -->
+          <aside class="span4 sidebar lp10">
+            <div class="sidebox widget">
+              <h4>Contact Details</h4>
+              <p>For inquiries or comments you can find us at:.</p>
+              <ul class="contact-info">
+                <li><i class="icon-location"></i> 1000 Main Street, Houston Texas 77002</li>
+                <li><i class="icon-phone"></i> 832 245-6753</li>
+                <li><i class="icon-mail"></i> <a href="mailto:lasantanag@yahoo.comt">lasantanag@yahoo.com</a></li>
+              </ul>
+            </div>
+            
+            <!-- /.widget 
+          </aside>
+          <!-- /.span4 --> 
+        <!-- </div> -->
+        <!-- /.row -->
+        <!-- <div class="clearfix"></div> -->
+      <!-- </div> -->
+      <!-- /.container -->
+    <!-- </div> -->
+    <!-- /.contact -->
+  <!-- </section> -->
+  <!-- /#contact -->
+  <footer class="light-wrapper text-center">
+   
+  </footer>
+  <!-- /footer -->
+</div> 
+
+<!--/.Plots--> 
+<!-- <script src="../test_app.js"></script> -->
+    <!-- <script src="test_app2.js"></script> -->
+    <!-- <script src="test_app3.js"></script> -->
+    <!-- <script src="test_app4.js"></script> -->
+    <!-- <script src="test_app5.js"></script> -->
+    <!-- <script src="test_app6.js"></script> -->
+    <!-- <script src="test_app7.js"></script> -->
+    <!-- <script src="test_app8.js"></script> -->
+<!--/.body-wrapper--> 
+<script src="../js/jquery.js"></script> 
+<script src="../js/bootstrap.min.js"></script> 
+<script src="../js/twitter-bootstrap-hover-dropdown.min.js"></script> 
+<script src="../js/jquery.themepunch.plugins.min.js"></script> 
+<script src="../js/jquery.themepunch.revolution.min.js"></script> 
+<script src="../js/jquery.themepunch.showbizpro.min.js"></script> 
+<script src="../js/jquery.fitvids.js"></script> 
+<script src="../js/jquery.slickforms.js"></script> 
+<script src="../js/jquery.isotope.min.js"></script> 
+<script src="../js/google-code-prettify/prettify.js"></script> 
+<script src="../js/jquery.easytabs.min.js"></script> 
+<script src="../js/jquery.jribbble-0.11.0.ugly.js"></script> 
+<script src="../js/view.min.js?auto"></script> 
+<script src="../js/scripts.js"></script>
+</body>
+</html>
