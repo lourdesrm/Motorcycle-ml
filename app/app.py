@@ -110,9 +110,9 @@ def index():
             data_month[month_list] = 0
             data_month[month] = 1
             results = month_model.predict_proba(data_month)
-            month_safe_rtgs.append(results[0][0])
-            month_inj_rtgs.append(results[0][1])
-            month_dth_rtgs.append(results[0][2])
+            month_safe_rtgs.append({month:results[0][0]})
+            month_inj_rtgs.append({month:results[0][1]})
+            month_dth_rtgs.append({month:results[0][2]})
 
         # DAILY RESULTS
         input_data = request.form.to_dict()
@@ -121,9 +121,9 @@ def index():
             data_daily[weekday_list] = 0
             data_daily[wkd] = 1
             results = weekday_model.predict_proba(data_daily)
-            day_safe_rtgs.append(results[0][0])
-            day_inj_rtgs.append(results[0][1])
-            day_dth_rtgs.append(results[0][2])
+            day_safe_rtgs.append({wkd:results[0][0]})
+            day_inj_rtgs.append({wkd:results[0][1]})
+            day_dth_rtgs.append({wkd:results[0][2]})
 
         return jsonify({"daily":{"Injury": day_inj_rtgs, "Death": day_dth_rtgs, "Safe": day_safe_rtgs},
                         "monthly":{"Injury": month_inj_rtgs, "Death": month_dth_rtgs, "Safe": month_safe_rtgs}}
