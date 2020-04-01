@@ -138,7 +138,7 @@ def index():
 
         # return jsonify()
 
-    return render_template('index_las.html')
+    return render_template('index.html')
 
 if __name__ == "__main__":
     load_model()
