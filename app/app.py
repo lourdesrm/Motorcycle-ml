@@ -92,6 +92,29 @@ responseData = {}
 def funcdata():
     return jsonify([responseData])
 
+
+###### CHRIS
+
+import json 
+with open("static/data/Master_filtered.json") as f :
+    f1 = json.load(f)
+
+@app.route("/data123")
+def data123():
+    return jsonify(f1)
+
+
+@app.route("/test")
+def test():
+    return render_template('plot_1.html')
+
+@app.route("/portafolio")
+def port():
+    return render_template('portfolio-plot1.html')
+
+
+#####
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':

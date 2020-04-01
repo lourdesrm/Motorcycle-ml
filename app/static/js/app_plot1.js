@@ -1,7 +1,7 @@
 //-------------------------------------------------------------------------------------------------------------------------//
 // var selPlot = document.getElementById('plot');
 d3.select("#plot").append('div')
-var path = '../../../Cleaned/Master_filtered.json'
+var path = 'data123'
 d3.json(path).then(function(data){
     
     var weather = data.map(d=>d.WEATHER);

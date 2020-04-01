@@ -344,6 +344,9 @@ $(document).ready(function () {
 					 //ADD A NEW CONTENT WRAPPER
 					var conurl = jQuery(this).data('contenturl');
 					var concon = jQuery(this).data('contentcontainer');
+
+					console.log("container:", concon);
+					console.log("url", conurl);
 					updateURLParameter(conurl);
 
 					var extraclass = "";
