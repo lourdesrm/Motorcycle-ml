@@ -85,6 +85,11 @@ def process_input(data, date_type):
 
     return df
 
+# # create route that renders index.html template
+# @app.route("/")
+# def home():
+#     return render_template("index.html")
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
