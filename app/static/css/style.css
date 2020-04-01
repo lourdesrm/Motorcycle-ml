@@ -1316,7 +1316,7 @@ input[type="submit"].btn::-moz-focus-inner {
     opacity: 1;
 }
 .tp-loader {
-    background: url(static/images/loading.gif) no-repeat;
+    background: url(../images/loading.gif) no-repeat;
     background-color: #fff;
     margin: -15px -15px;
     top: 50%;
@@ -1329,13 +1329,13 @@ input[type="submit"].btn::-moz-focus-inner {
 }
 @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) { 
 	.tp-loader {
-	    background-image: url(static/images/loading@2x.gif)
+	    background-image: url(../images/loading@2x.gif)
 	}
 }
 .tp-bannertimer {
     width: 100%;
     height: 10px;
-    background: url(static/images/timer.png);
+    background: url(../images/timer.png);
     position: absolute;
     z-index: 200;
 }
@@ -1659,16 +1659,16 @@ input[type="submit"].btn::-moz-focus-inner {
     background-attachment: scroll !important
 }
 .parallax.contact {
-	background-image: url(static/images/art/parallax1.jpg);
+	background-image: url(../images/art/parallax1.jpg);
     height: 675px;
 }
 .parallax.testimonials {
-	background-image: url(static/images/art/parallax2.jpg);
+	background-image: url(../images/art/parallax2.jpg);
     padding-top: 30px;
     height: 380px;
 }
 .parallax.dribbble {
-	background-image: url(static/images/art/parallax3.jpg);
+	background-image: url(../images/art/parallax3.jpg);
     height: 561px; 
 }
 .parallax .contact-info {
@@ -1997,7 +1997,7 @@ input[type="submit"].btn::-moz-focus-inner {
     position: absolute
 }
 .grid-loader {
-    background: url(static/images/loading.gif) no-repeat center center;
+    background: url(../images/loading.gif) no-repeat center center;
     background-color: #FFF;
     margin: -22px -22px;
     top: 50%;
@@ -2012,7 +2012,7 @@ input[type="submit"].btn::-moz-focus-inner {
 }
 @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) { 
 	.grid-loader {
-	    background-image: url(static/images/loading@2x.png)
+	    background-image: url(../images/loading@2x.png)
 	}
 }
 .navigation {
@@ -2296,10 +2296,10 @@ img.small {
     right: 20px;
 }
 .viewer li.loading>div {
-    background: url(static/images/view-loading.gif) center center no-repeat
+    background: url(../images/view-loading.gif) center center no-repeat
 }
 .multiplebgs .viewer li.loading>div {
-    background: url(static/images/view-loading.gif) center center no-repeat
+    background: url(../images/view-loading.gif) center center no-repeat
 }
 .viewer li.loading.previous,
 .viewer li.loading.next {
