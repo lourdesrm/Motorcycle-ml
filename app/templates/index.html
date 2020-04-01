@@ -16,33 +16,45 @@
     <form method=post enctype=multipart/form-data>
         <label for="Age">What is your Age?:</label>
         <input type="text" id="Age" name="Age"><br>
-        <label for="Gender">What is your Gender? (Male/Female/Gender Neutral):</label>
-        <input type="text" id="Gender" name="Gender"><br>
-        <label for="Previous Accident">Input Number of Previous Accidents? (0 if none):</label>
+        <label for="Gender">What is your Gender?:</label>
+        <select id="Gender" name="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select><br>
+        <label for="Previous Accident">Number of Previous Accidents? (0-99):</label>
         <input type="text" id="Previous Accident" name="Previous Accident"><br>
-        <label for="Previous Speeding"> Input Number of Previous Speeding Violations? (0 if none):</label>
+        <label for="Previous Speeding"> Number of Previous Speeding Violations? (0-99):</label>
         <input type="text" id="Previous Speeding" name="Previous Speeding"><br>
-        <label for="Previous DWI">Input Number of Previous DWI Violations? (0 if none):</label>
+        <label for="Previous DWI">Number of Previous DWI Violations? (0-99):</label>
         <input type="text" id="Previous DWI" name="Previous DWI"><br>
-        <label for="Drugs">Drug Intoxication? (No Drugs, Drug Use Reported):</label>
-        <input type="text" id="Drugs" name="Drugs"><br>
-        <label for="Alcohol">Alcohol Intoxication? (No Drinking, Drinking Reported):</label>
-        <input type="text" id="Alcohol" name="Alcohol"><br>
-        <label for="Helmet Use"> Using Helmet? (Yes/No):</label>
-        <input type="text" id="Helmet Use" name="Helmet Use"><br>
-        <!-- <label for="Month"> Desired Month Input (January -> December ):</label>
-        <input type="text" id="Month" name="Month"><br> -->
-        <!-- <label for="Weekday">Desired Weekday Input (Sunday -> Monday):</label>
-        <input type="text" id="Weekday" name="Weekday"><br> -->
-        <label for="Weather"> Desired Weather Conditions Input (Clear Weather, Rainy Weather, Foggy Weather, Severly Windy Weather, Blowing Sand Weather):</label>
-        <input type="text" id="Weather" name="Weather"><br>
-        
-        
+        <label for="Drugs">Drug Use?:</label>
+        <select id="Drugs" name="Drugs">
+            <option value="No Drugs">No</option>
+            <option value="Drug Use Reported">Yes</option>
+          </select><br>
+        <label for="Alcohol">Alcohol Intoxication?:</label>
+        <select id="Alcohol" name="Alcohol">
+            <option value="No Drinking">No </option>
+            <option value="Drinking Reported">Yes</option>
+          </select><br>
+        <label for="Helmet Use"> Using Helmet?:</label>
+        <select id="Helmet Use" name="Helmet Use">
+            <option value="No">No </option>
+            <option value="Yes">Yes</option>
+          </select><br>
+        <label for="Weather"> Desired Weather Conditions:</label>
+        <select id="Weather" name="Weather">
+            <option value="Clear Weather">Clear </option>
+            <option value="Rainy Weather">Rainy</option>
+            <option value="Foggy Weather">Foggy</option>
+            <option value="Severly Windy Weather">Severly Windy</option>
+            <option value="Blowing Sand Weather">Blowing Sand</option>
+          </select><br>      
 
         <input type=submit value=Submit>
     </form>
 
-    <h3>Likelyhood of injury severity (0 - No InJury, 1 - Injury, 2 - Fatal Injury): {{ result }}</h3>
+    <!-- <h3>Likelyhood of injury severity (0 - No InJury, 1 - Injury, 2 - Fatal Injury): {{ result }}</h3> -->
 </body>
 
 </html>
