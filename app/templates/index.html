@@ -14,6 +14,7 @@
 <link href="static/css/color/green.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <link href="static/type/fontello.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -31,6 +32,7 @@
 <script src="{{ url_for('static', filename='js/jquery.jribbble-0.11.0.ugly.js') }}"></script> 
 <script src="{{ url_for('static', filename='js/view.min.js?auto') }}"></script> 
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
 
 
 <!--[if IE 8]>
@@ -85,10 +87,15 @@
         <ul>
           <li data-transition="fade"> <img src="static/images/group.jpg" alt="" />
             <div class="caption sfl bold bg text-center" data-x="center" data-y="220" data-speed="500" data-start="500" data-easing="easeOutExpo">Texas Motorcycle Safety Genius</div>
-            <div class="caption sfr lite bg text-center" data-x="center" data-y="359" data-speed="500" data-start="900" data-easing="easeOutExpo">A motorcyclist safety tool</div>
+            <div class="caption sfr lite bg text-center" data-x="center" data-y="359" data-speed="500" data-start="900" data-easing="easeOutExpo">A Motorcyclist Safety Tool</div>
           </li>
         </ul>
-
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <!-- /.fullscreen-banner --> 
     </div>
     <!-- /.fullscreen-container --> 
@@ -111,10 +118,10 @@
         <!-- /.span3 -->
         <div class="span9">
           <div class="divide10"></div>
-          <p class="lead"> Riding a motorcycle is about freedom, passion and life. But it is also about taken educated and calculated risks! Because, as many say: “motorcycles are too dangerous!” Right? </p>
+          <p class="lead"> Riding a motorcycle is about freedom, passion, and enjoying life: however, it is also about taking calculated risks using educational decision making! We want to answer the question: "how risky is riding a motorcycle?".</p>
           <p class="lead"> </p>
           <div class="divide10"></div>
-          <p>Our project attempts to shed light on several myths about the risks of riding motorcycles. We want to educate current and future motorcycles riders about the safest way to ride a motorcycle.</p>
+          <p>Our project attempts to evaluate ride risk factors associated with riding motorcycles. We want to educate motorcyclists how certain riding factors can change expected injury severity outcomes while riding.</p>
         </div>
         <!-- /.span9 --> 
       </div>
@@ -123,22 +130,24 @@
       <div class="divide80"></div>
       <div class="row">
         <div class="span6">
-          <h6>What We Do?</h6>
-          <p>We use data to learn and predict future outcomes on whatever question where we want put our atention. </p>
-          <p>We can ensure you that our data sources are reliable and our analysis strong.</p>
+          <h4>What We Do?</h4>
+          <p>We created Classification Machine Learning Models with the Random Decision Forest method to predict the injury severity of the a motorcyclists given controllable variables. </p>
+          <p>We assembled plots for the given inputs of Age, Gender, Previous Accidents, Previous Speeding Violations, Previous DWI Violations, Drug Use, Alcohol Use, Helmet Use and Desired Weather Conditions.</p>
         </div>
         <!-- /.span4 -->
         <div class="span6">
-          <h6>What is Our Process?</h6>
-          <p>Our team has over 50 years of technical experience. Our process is systematic and detailed oriented. Our process is balanced with our diverse perspectives to unsure an un-bias analysis.</p>
+          <h4>Our Process</h4>
+          <p>With over 50 years of techincal experience, our team's process is systematic, detailed oriented, and balanced with diverse perspectives to ensure an unbiased analysis.</p>
           <ol>
-            <li>We search for the best reliable data source we can get. We will use Fatal Accident Report System (FARS).</li>
-            <li>We clean and re-arrange the data to make it meaningful for our users.</li>
-            <li>We use AI and ML to get you the best safe ride possible.</li>
+            <li>We searched for a well versed dataset and decided to use the <a href="https://www.nhtsa.gov/node/97996/251">Fatal Accident Report System (FARS)</a> from the National Highway Traffic Safety Administration.</li>
+            <li>Looking through the data, we chose to focus on motorcyle accidents in Texas from 2014-2018. We cleaned our data using <a href="https://www.python.org/">Python</a> and <a href="https://pandas.pydata.org/">Pandas</a>, saving the new data frames out as CSV files.</li>
+            <li>Reading in the output from the CSV files created above, we create a Classification Machine Learning model using <a href="https://scikit-learn.org/">SKLearn</a>, 
+              utilizing the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">RandomForestClassifier</a> to make predictions based off previous accidents.</li>
+            <li>We also created seperate month and weekday models the strictly focused on either the day of the week or which month, to determine if there were higher risk factors associated the date. These are presented once the form is submitted.</li>
+            <li>After utilizing our models to make educated predictions, we then created an webpage that allows the user to look through our data and test their own scenarios to determine how risky future rides will be.</li>
+            <li>We then chose to plot out many of our risk factors to show the user how they contribute to our model. We used <a href="https://plotly.com/">Plotly</a> and <a href="https://d3js.org/">D3</a> to make our plots.</li>
             <br>
-          
 
-            <h8>Just play with the different factor and find the safest way of riding a motorcycle “Under Texan Sun”. </h8>
           </ol>
         </div>
       </div>
@@ -245,6 +254,7 @@
       <!-- /.container --> 
     </div>
     <!-- /.section-head -->
+<<<<<<< HEAD
 
     <!-- <div class="container">
       <div class="row">
@@ -257,6 +267,11 @@
         </div>
       </div>
     </div> -->
+=======
+    <div class="container showcase-wrapper">
+      <div class="inner">
+        <p class="lead">We plot many different varibales to show their impact in a motorcyclist's risk factor.</p>
+>>>>>>> 1cfccc5e0c24c71fcd152ee2d90efc2d6d82dbd9
         <!-- <div class="divide30"></div> -->
         <!-- <ul class="filter">
           <li><a class="active" href="#" data-filter="*">All</a></li>
@@ -326,40 +341,162 @@
     <!-- /.section-head -->
     <div class="container lightbox-wrapper">
       <div class="inner">
-        <p class="lead">Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <p class="lead">Please select the inputs you would like to test. Variable such as day of the week and month are calculated for all submissions.</p>
         <div class="divide30"></div>
         <!-- <li data-transition="fade"><iframe src="static/app/templates/index.html" width="1170" height="600"></iframe></li> -->
         <h1>Severe Injury Ratings Form:</h1>
         <form method=post enctype=multipart/form-data>
-          <label for="Age">What is your Age?:</label>
-          <input type="text" id="Age" name="Age" placeholder="30"><br>
-          <label for="Gender">What is your Gender?:</label>
+          <label for="Age">Age of Rider:</label>
+          <!-- <input type=“text” id=“Age” name=“Age” value=30> -->
+          <select id="Age" name="Age">
+          <option [ngValue]="15">15</option>
+          <option [ngValue]="16">16</option>
+          <option [ngValue]="17">17</option>
+          <option [ngValue]="18">18</option>
+          <option [ngValue]="19">19</option>
+          <option [ngValue]="20">20</option>
+          <option [ngValue]="21">21</option>
+          <option [ngValue]="22">22</option>
+          <option [ngValue]="23">23</option>
+          <option [ngValue]="24">24</option>
+          <option [ngValue]="25">25</option>
+          <option [ngValue]="26">26</option>
+          <option [ngValue]="27">27</option>
+          <option [ngValue]="28">28</option>
+          <option [ngValue]="29">29</option>
+          <option [ngValue]="30">30</option>
+          <option [ngValue]="31">31</option>
+          <option [ngValue]="32">32</option>
+          <option [ngValue]="33">33</option>
+          <option [ngValue]="34">34</option>
+          <option [ngValue]="35">35</option>
+          <option [ngValue]="36">36</option>
+          <option [ngValue]="37">37</option>
+          <option [ngValue]="38">38</option>
+          <option [ngValue]="39">39</option>
+          <option [ngValue]="40">40</option>
+          <option [ngValue]="41">41</option>
+          <option [ngValue]="42">42</option>
+          <option [ngValue]="43">43</option>
+          <option [ngValue]="44">44</option>
+          <option [ngValue]="45">45</option>
+          <option [ngValue]="46">46</option>
+          <option [ngValue]="47">47</option>
+          <option [ngValue]="48">48</option>
+          <option [ngValue]="49">49</option>
+          <option [ngValue]="50">50</option>
+          <option [ngValue]="51">51</option>
+          <option [ngValue]="52">52</option>
+          <option [ngValue]="53">53</option>
+          <option [ngValue]="54">54</option>
+          <option [ngValue]="55">55</option>
+          <option [ngValue]="56">56</option>
+          <option [ngValue]="57">57</option>
+          <option [ngValue]="58">58</option>
+          <option [ngValue]="59">59</option>
+          <option [ngValue]="60">60</option>
+          <option [ngValue]="61">61</option>
+          <option [ngValue]="62">62</option>
+          <option [ngValue]="63">63</option>
+          <option [ngValue]="64">64</option>
+          <option [ngValue]="65">65</option>
+          <option [ngValue]="66">66</option>
+          <option [ngValue]="67">67</option>
+          <option [ngValue]="68">68</option>
+          <option [ngValue]="69">69</option>
+          <option [ngValue]="70">70</option>
+          <option [ngValue]="71">71</option>
+          <option [ngValue]="72">72</option>
+          <option [ngValue]="73">73</option>
+          <option [ngValue]="74">74</option>
+          <option [ngValue]="75">75</option>
+          <option [ngValue]="76">76</option>
+          <option [ngValue]="77">77</option>
+          <option [ngValue]="78">78</option>
+          <option [ngValue]="79">79</option>
+          <option [ngValue]="80">80</option>
+          <option [ngValue]="81">81</option>
+          <option [ngValue]="82">82</option>
+          <option [ngValue]="83">83</option>
+          <option [ngValue]="84">84</option>
+          <option [ngValue]="85">85</option>
+          <option [ngValue]="86">86</option>
+          <option [ngValue]="87">87</option>
+          <option [ngValue]="88">88</option>
+          <option [ngValue]="89">89</option>
+          <option [ngValue]="90">90</option>
+          <option [ngValue]="91">91</option>
+          <option [ngValue]="92">92</option>
+          <option [ngValue]="93">93</option>
+          <option [ngValue]="94">94</option>
+          <option [ngValue]="95">95</option>
+          <option [ngValue]="96">96</option>
+          <option [ngValue]="97">97</option>
+          <option [ngValue]="98">98</option>
+          <option [ngValue]="99">99</option>
+        </select><br>
+          <label for="Gender">Gender of Rider:</label>
           <select id="Gender" name="Gender">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select><br>
-          <label for="Previous Accident">Number of Previous Accidents? (0-99):</label>
-          <input type="text" id="Previous Accident" name="Previous Accident" placeholder="0"><br>
-          <label for="Previous Speeding"> Number of Previous Speeding Violations? (0-99):</label>
-          <input type="text" id="Previous Speeding" name="Previous Speeding" placeholder="0"><br>
-          <label for="Previous DWI">Number of Previous DWI Violations? (0-99):</label>
-          <input type="text" id="Previous DWI" name="Previous DWI" placeholder="0"><br>
-          <label for="Drugs">Drug Use?:</label>
+          <label for="Previous Accident"># of Previous Accidents:</label>
+          <!-- <input type=“text” id=“Previous Accident” name=“Previous Accident” value=0> -->
+          <select id="Previous Accident" name="Previous Accident">
+            <option [ngValue]="0">0</option>
+            <option [ngValue]="1">1</option>
+            <option [ngValue]="2">2</option>
+            <option [ngValue]="3">3</option>
+            <option [ngValue]="4">4</option>
+            <option [ngValue]="5">5</option>
+            <option [ngValue]="6">6</option>
+            <option [ngValue]="7">7</option>
+            <option [ngValue]="8">8</option>
+            <option [ngValue]="9">9</option>
+          </select><br>
+          <label for="Previous Speeding"> # of Previous Speeding Violations:</label>
+          <select id="Previous Speeding" name="Previous Speeding">
+            <option [ngValue]="0">0</option>
+            <option [ngValue]="1">1</option>
+            <option [ngValue]="2">2</option>
+            <option [ngValue]="3">3</option>
+            <option [ngValue]="4">4</option>
+            <option [ngValue]="5">5</option>
+            <option [ngValue]="6">6</option>
+            <option [ngValue]="7">7</option>
+            <option [ngValue]="8">8</option>
+            <option [ngValue]="9">9</option>
+          </select><br>
+          <label for="Previous DWI"># of Previous DWI Violations:</label>
+          <select id="Previous DWI" name="Previous DWI">
+            <option [ngValue]="0">0</option>
+            <option [ngValue]="1">1</option>
+            <option [ngValue]="2">2</option>
+            <option [ngValue]="3">3</option>
+            <option [ngValue]="4">4</option>
+            <option [ngValue]="5">5</option>
+            <option [ngValue]="6">6</option>
+            <option [ngValue]="7">7</option>
+            <option [ngValue]="8">8</option>
+            <option [ngValue]="9">9</option>
+          </select><br>
+          <!-- <input type="text" id="Previous DWI" name="Previous DWI" placeholder="0"><br> -->
+          <label for="Drugs">Will Rider Use Drugs Before Riding:</label>
           <select id="Drugs" name="Drugs">
             <option value="No Drugs">No</option>
             <option value="Drug Use Reported">Yes</option>
           </select><br>
-          <label for="Alcohol">Alcohol Intoxication?:</label>
+          <label for="Alcohol">Will Rider Drink Alcohol Before Riding:</label>
           <select id="Alcohol" name="Alcohol">
             <option value="No Drinking">No </option>
             <option value="Drinking Reported">Yes</option>
           </select><br>
-          <label for="Helmet Use"> Using Helmet?:</label>
+          <label for="Helmet Use">Will Rider Wear a Helmet:</label>
           <select id="Helmet Use" name="Helmet Use">
             <option value="No">No </option>
             <option value="Yes">Yes</option>
           </select><br>
-          <label for="Weather"> Desired Weather Conditions:</label>
+          <label for="Weather">Ideal Weather Conditions During Ride:</label>
           <select id="Weather" name="Weather">
             <option value="Clear Weather">Clear </option>
             <option value="Rainy Weather">Rainy</option>
@@ -368,9 +505,10 @@
             <option value="Blowing Sand Weather">Blowing Sand</option>
           </select><br>
       
-          <input type=submit value=Submit>
+          <input type=submit id= submit value=Plot>
         </form>
         <div id="plot"></div>
+        <div id="plot1"></div>
         <script src="{{ url_for('static', filename='js/predict_app.js') }}"></script>
         <!-- <ul class="filter">
           <li><a class="active" href="#" data-filter="*">All</a></li>
@@ -449,18 +587,48 @@
           <div class="span0">
   
             <!-- /.form-container --> 
-          </div>
+          
           <!-- /.span8 -->
           <aside class="span4 sidebar lp10">
             <div class="sidebox widget">
-              <h4>Contact Details</h4>
+              <!-- <h4>Contact Details</h4>
               <p>For inquiries or comments you can find us at:.</p>
+             -->
               <ul class="contact-info">
+                <p><b>Luis Santana</b></p>
                 <li><i class="icon-location"></i> 1000 Main Street, Houston Texas 77002</li>
-                <li><i class="icon-phone"></i> 832 245-6753</li>
-                <li><i class="icon-mail"></i> <a href="mailto:lasantanag@yahoo.comt">lasantanag@yahoo.com</a></li>
+                <li><i class="icon-phone"></i>281-928-2021</li>
+                <li><i class="icon-mail"></i> <a href="mailto:lasantanag@yahoo.com">lasantanag@yahoo.com</a></li>
+                <li><i style="font-size:24px" class="fa">&#xf0e1;</i><a href="https://www.linkedin.com/in/benjaminbastedo">LinkedIn</a></li>
+                <li><i class="fab fa-github"></i><a href="https://github.com/lasantanag">GitHub</a></li>
               </ul>
-            </div>
+              <ul class="contact-info">
+                <p><b>Ben Bastedo</b></p>
+                <li><i class="icon-phone"></i>281-253-1405</li>
+                <li><i class="icon-mail"></i> <a href="mailto:bbastedo4@gmail.com">bbastedo4@gmail.com</a></li>
+                <li><i style="font-size:24px" class="fa">&#xf0e1;</i><a href="https://www.linkedin.com/in/benjaminbastedo">LinkedIn</a></li>
+                <li><i class="fab fa-github"></i><a href="https://github.com/bbastedo">GitHub</a></li>
+              </ul>
+              <ul class="contact-info">
+                <p><b>Lourdes Rodriguez Milano</b></p>
+                <li><i class="icon-phone"></i>270-421-0542</li>
+                <li><i class="icon-mail"></i> <a href="mailto:lourdes.rm10@gmail.com">lourdes.rm10@gmail.com</a></li>
+                <li><i style="font-size:24px" class="fa">&#xf0e1;</i><a href="https://www.linkedin.com/in/lourdes-rodriguez-milano/">LinkedIn</a></li>
+                <li><i class="fab fa-github"></i><a href="https://github.com/lourdesrm">GitHub</a></li>
+              </ul>
+              <ul class="contact-info">
+                <p><b>Luis Casas</b></p>
+                <li><i class="icon-phone"></i>832-245-6753</li>
+                <li><i class="icon-mail"></i> <a href="mailto:cosamagrande@gmail.com">cosamagrande@gmail.com</a></li>
+                <li><i style="font-size:24px" class="fa">&#xf0e1;</i><a href="https://www.linkedin.com/in/https://www.linkedin.com/in/luis-casas-779a0723/">LinkedIn</a></li>
+                <li><i class="fab fa-github"></i><a href="https://github.com/lasantanag">GitHub</a></li>
+              </ul>
+              <br>
+              <br>
+              <br>
+            </div></aside></div>
+            
+            
             
             <!-- /.widget 
           </aside>
