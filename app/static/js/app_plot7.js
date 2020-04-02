@@ -1,5 +1,6 @@
 //-------------------------------------------------------------------------------------------------------------------------//
-var path = '../../../Cleaned/Master_filtered.json'
+d3.select("#plot").append('div')
+var path = 'data123'
 var fatality = 'Fatal'
 d3.json(path).then(function(data){
     
@@ -55,7 +56,7 @@ d3.json(path).then(function(data){
       title:{text:"<b>Total Accidents and Fatalities</b>",
       font:{
       color: 'black',
-      size: 28,
+      size: 20,
       // family: 'Old Standard TT, serif',
       }
       },
@@ -64,13 +65,13 @@ d3.json(path).then(function(data){
     legend: {
       font: {
         family: 'sans-serif',
-        size: 22,
+        size: 18,
       },
     },
     
         xaxis: { 
         title: {text:'<b>Year</b>',
-        font:{ color: 'darkblue', size: 20 } },
+        font:{ color: 'darkblue', size: 16 } },
         dtick: 2,
         tickfont: {
           color: 'darkgreen', size: 16
@@ -79,7 +80,7 @@ d3.json(path).then(function(data){
         
         yaxis: { 
         title: {text:'<b>Number of Accidents / Fatalities</b>',
-        font:{ color: 'darkblue', size: 20 } },
+        font:{ color: 'darkblue', size: 16 } },
         autorange: true, 
         tickfont: {
         color: 'darkgreen', size:16

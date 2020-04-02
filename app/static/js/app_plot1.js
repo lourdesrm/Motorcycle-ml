@@ -28,26 +28,28 @@ d3.json(path).then(function(data){
 
   // Define layout
   var layout = {
+    // autosize: True,
+    width: 600,
+    height: 400,
     title:{text:"<b>Number of Accidents vs. Weather</b>",
       font:{
       color: 'black',
-      size: 28,
+      size: 20,
       // family: 'Old Standard TT, serif',
       }
     },
-    size: 40,
     yaxis: {
     title: {text: "<b>Number of Accidents</b>",
     zerolinecolor:"green",
     font:{
     color: 'green',
-    size: 26,
+    size: 15,
       }
     },
     gridcolor:"lightgreen",
     tickfont: {
       // family: 'Old Standard TT, serif',
-      size: 16,
+      size: 10,
       color: 'green',
       }
     },
@@ -57,12 +59,12 @@ d3.json(path).then(function(data){
     title:{text: "<b>Weather Conditions</b>",
     font:{
     color: 'green',
-    size: 26,
+    size: 15,
       }
     },
     tickfont: {
       // family: 'Old Standard TT, serif',
-      size: 18,
+      size: 10,
       color: 'darkgreen',
     }
 },

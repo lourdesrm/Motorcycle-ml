@@ -1,5 +1,6 @@
 //-------------------------------------------------------------------------------------------------------------------------//
-var path = '../../../Cleaned/Master_filtered.json'
+d3.select("#plot").append('div')
+var path = 'data123'
 d3.json(path).then(function(data){
     
     var dayWeek = data.map(d=>d.DAY_WEEK);

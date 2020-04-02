@@ -93,25 +93,52 @@ def funcdata():
     return jsonify(responseData)
 
 
-###### CHRIS
+###### CHRIS' FAULT
 
 import json 
 with open("static/data/Master_filtered.json") as f :
     f1 = json.load(f)
 
+import json 
+with open("static/data/Master_helmet.json") as f :
+    f2 = json.load(f)
+
 @app.route("/data123")
 def data123():
     return jsonify(f1)
 
+@app.route("/data345")
+def data345():
+    return jsonify(f2)
 
-@app.route("/test")
-def test():
+
+@app.route("/plot1")
+def plot1():
     return render_template('plot_1.html')
 
-@app.route("/portafolio")
-def port():
-    return render_template('portfolio-plot1.html')
+@app.route("/plot7")
+def plot7():
+    return render_template('plot_7.html')
 
+@app.route("/plot5")
+def plot5():
+    return render_template('plot_5.html')
+
+@app.route("/plot2")
+def plot2():
+    return render_template('plot_2.html')
+
+@app.route("/plot6")
+def plot6():
+    return render_template('plot_6.html')
+
+@app.route("/plot4")
+def plot4():
+    return render_template('plot_4.html')
+
+@app.route("/plot3")
+def plot3():
+    return render_template('plot_3.html')
 
 #####
 

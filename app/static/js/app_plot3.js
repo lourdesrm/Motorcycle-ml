@@ -1,5 +1,6 @@
 //-------------------------------------------------------------------------------------------------------------------------//
-var path = '../../../Cleaned/Master_helmet.json'
+d3.select("#plot").append('div')
+var path = 'data345'
 d3.json(path).then(function(data){
     
     var helmetUse = data.map(d=>d.REST_USE);
