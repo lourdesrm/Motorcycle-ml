@@ -17,11 +17,11 @@ function buildPlot() {
       type: "scatter",
       mode: "lines+markers",
       marker: {
-        color: "red",
+        color: "darkred",
         size: 12
       },
       line: {
-        color: "red"
+        color: "darkred"
       }
     };
     var trace2 = {
@@ -31,11 +31,11 @@ function buildPlot() {
       type: "scatter",
       mode: "lines+markers",
       marker: {
-        color: "green",
+        color: "limegreen",
         size: 12
       },
       line: {
-        color: "green"
+        color: "limegreen"
       }
     };
     var trace3 = {
@@ -45,11 +45,11 @@ function buildPlot() {
       type: "scatter",
       mode: "lines+markers",
       marker: {
-        color: "orange",
+        color: "darkorange",
         size: 12
       },
       line: {
-        color: "orange"
+        color: "darkorange"
       }
     };
 

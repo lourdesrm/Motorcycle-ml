@@ -11,6 +11,7 @@ d3.json(path).then(function(data){
             labels: interType,
             values: accident,
             type: "pie",
+            hole: .4,
             textinfo: "label+percent",
             automargin: true,
             showlegend: true,
@@ -25,18 +26,24 @@ d3.json(path).then(function(data){
     
         var data = [trace];
         var layout = {
-    
+  
             title:{text:"<b>Accidents Occurrence <br> by Intersection Type</b>",
+            height: 400,
+            width: 400,
+            margin:{
+                l: 20,
+                r: 5,
+                b: 1,
+                t: 1,
+                pad: 2
+            }, 
             font:{
             color: 'black',
-            size: 28,
+            size: 20,
             // family: 'Old Standard TT, serif',
             }
           },
-          size: 40,
-    
-            height: 600,
-            width: 600
+
         };
         Plotly.newPlot("plot", data, layout);
     }) 
