@@ -12,7 +12,7 @@
 <link href="static/js/google-code-prettify/prettify.css" rel="stylesheet">
 <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 <link href="static/css/color/green.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <link href="static/type/fontello.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="shortcut icon" href="../static/images/icons/favicon.ico" type="image/x-icon" />
@@ -36,7 +36,12 @@
 
 
 
-
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="static/css/ie8.css" media="all" />
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="static/js/html5shiv.js"></script>
+<![endif]-->
 </head>
 <body data-spy="scroll" data-target=".nav-collapse" data-offset="100">
 <div class="body-wrapper">
@@ -139,8 +144,8 @@
             <li>Looking through the data, we chose to focus on motorcyle accidents in Texas from 2014-2018. We cleaned our data using <a href="https://www.python.org/">Python</a> and <a href="https://pandas.pydata.org/">Pandas</a>, saving the new data frames out as CSV files.</li>
             <li>Reading in the output from the CSV files created above, we create a Classification Machine Learning model using <a href="https://scikit-learn.org/">SKLearn</a>, 
               utilizing the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">RandomForestClassifier</a> to make predictions based off previous accidents.</li>
-            <li>Seperate month and weekday models generated to focus on either the day of the week or month in a year to interpret risk factors associated to the date variable. Predictions appear once the form is submitted.</li>
-            <li>After utilizing our models to make educated predictions, we built a webpage that allows the user to look through the data and test their own scenarios to determine how risky future rides could be.</li>
+            <li>We also created seperate month and weekday models the strictly focused on either the day of the week or which month, to determine if there were higher risk factors associated the date. These are presented once the form is submitted.</li>
+            <li>After utilizing our models to make educated predictions, we then created an webpage that allows the user to look through our data and test their own scenarios to determine how risky future rides will be.</li>
             <li>We then chose to plot out many of our risk factors to show the user how they contribute to our model. We used <a href="https://plotly.com/">Plotly</a> and <a href="https://d3js.org/">D3</a> to make our plots.</li>
             <br>
 
@@ -278,35 +283,35 @@
         <table>
           <tr>
             <td><iframe src="/plot7" width="900" height="500"></iframe></td>
-            <td>The number of accidents increased from 1998 to 2008 increased 3.7 times
-              Since then the number of accidents has remained essentially flat around 800 a year
+            <td>The number of accidents increased from 1998 to 2008 increased by 3.7 times. Since 2008, the number of accidents has remained relatively constant at around 800 a year.
               </td>
           </tr>
           <tr>
             <td><iframe src="/plot5" width="900" height="500"></iframe></td>
-            <td>Analyzing the motorcycle accidents using the last 20 years aggregate it can be noticed that, once getting involved in an accident, there are three fatal scenarios out of five, in other words, almost 60% probability of getting killed. Tip: Best way is to avoid any accident! </td>
+            <td>We analyzed the past 20 years of data from motorcycle accidents in Texas. We observed that three of five scenarios, or approximately 60%, of accidents result in death. <b>Tip: The best way to avoid a fatal injury is to avoid any accident!</b></td>
           </tr>
           <tr>
             <td><iframe src="/plot2" width="900" height="500"></iframe></td>
-            <td>Weekends seems to be the days where the accident occurrence increases since likely the number of riders also increases. Saturday is prevalently the day of highest accident occurrence.</td>
+            <td>Weekends seems to be the days where the accident occurrence increases since likely the number of riders also increases. Saturday and Sunday are the days of highest accident occurrence during any given week.</td>
           </tr>
           <tr>
             <td><iframe src="/plot6" width="900" height="500"></iframe></td>
-            <td>There is a myth that point at intersections as the most dangerous situation in the road.  This data validates the alternative view where 68% of accidents are not at intersections.</td>
+            <td>A common myth likens motorcycle accidents to be the most dangerous at intersections. This data validates an alternative view where 68% of accidents are not at intersections.</td>
           </tr>
           <tr>
             <td><iframe src="/plot1" width="900" height="500"></iframe></td>
-            <td>Another myth points that the amount of accident increases when climatology conditions are different than clear day, in other words, during rainy, foggy and cloudy days. However, the data evaluated shows that over 90% of accidents occurred under a clear sunny day! So not be so sure of pulling hard that throttle when the almighty sun is bright and shine. Not be overconfident. </td>
+            <td>Another myth points out that accidents increase when weather conditions are different than a "clear day", such as rainy, foggy and cloudy days. However, the data evaluated shows that over 90% of accidents occurred under a clear sunny day! So, do not be so sure of pulling hard that throttle when the almighty sun is bright. Don't be overconfident. </td>
           </tr>
           <tr>
             <td><iframe src="/plot4" width="900" height="500"></iframe></td>
-            <td>Historical data support the fact that Motorcyclist are 2.4 times more likely to be involved in an accident if they are impaired by alcohol. Not drink and ride! You need your balance and your clear head to make the right decisions while riding a motorcycle.</td>
+            <td>Historical data supports that motorcyclists are 2.4 times more likely to be involved in an accident if they are impaired by alcohol. Two of the most important skills any motorcyclist can possess are balance and clear decision making while riding. Don't drink and ride!</td>
           </tr>
           <tr>
             <td><iframe src="/plot3" width="900" height="500"></iframe></td>
-            <td>There were almost 2,400 fatalities in Texas involving riding motorcycles without helmet in Texas during the last 20 years. We wonder how many of these fatalities could have been reported with a level of severity lower than death in the case the rider was using a helmet instead. Please let’s be smart and wear helmet when riding!</td>
+            <td>There were approximately 2,400 fatalities in Texas involving motorcyclists riding without a helmet since 1998. We are curious how many of these fatalities could have had their injury severity lowered if proper protection equipment was worn. Please be smart and wear a helmet when riding!</td>
           </tr>
         </table>
+
 
       </div>
       <!--/.inner--> 
@@ -319,7 +324,7 @@
   <!-- ############################# -->
   <!--  PREDICTOR -->
   
-  <section id="showcase" class="light-wrapper">
+  <section id="lightbox" class="light-wrapper">
     <div class="section-head">
       <div class="container">
         <h1>Severity Injury Predictor</h1>
@@ -330,7 +335,7 @@
     <div class="container lightbox-wrapper">
       <div class="inner">
         <p class="lead">Please select the inputs you would like to test. Variable such as day of the week and month are calculated for all submissions.</p>
-        <div class="divide30"></div>
+        <!-- <div class="divide30"></div> -->
         <!-- <li data-transition="fade"><iframe src="static/app/templates/index.html" width="1170" height="600"></iframe></li> -->
         <h1>Severe Injury Ratings Form:</h1>
         <form method=post enctype=multipart/form-data>
@@ -492,13 +497,12 @@
             <option value="Severly Windy Weather">Severly Windy</option>
             <option value="Blowing Sand Weather">Blowing Sand</option>
           </select><br>
-          <button id="submit" type="submit" class="btn btn-default">Risk Predictor</button>
       
-          <!-- <input type=submit id= submit value=Plot> -->
+          <input type=submit id= submit value=Plot>
         </form>
         <div id="plot"></div>
         <div id="plot1"></div>
-        <script src="{{ url_for('static', filename='js/predict_app.js') }}"></script>
+        
         <!-- <ul class="filter">
           <li><a class="active" href="#" data-filter="*">All</a></li>
           <li><a href="#" data-filter=".branding">Branding</a></li>
@@ -609,9 +613,37 @@
             </div>
           </aside>
         </div> 
+            
+            
+            
+            <!-- /.widget 
+          </aside>
+          <!-- /.span4 --> 
+        <!-- </div> -->
+        <!-- /.row -->
+        <!-- <div class="clearfix"></div> -->
+      <!-- </div> -->
+      <!-- /.container -->
+    <!-- </div> -->
+    <!-- /.contact -->
+  <!-- </section> -->
+  <!-- /#contact -->
+  <footer class="light-wrapper text-center">
+   
+  </footer>
+  <!-- /footer -->
 </div> 
 
-
+<!--/.Plots--> 
+<!-- <script src="static/test_app.js"></script> -->
+    <!-- <script src="test_app2.js"></script> -->
+    <!-- <script src="test_app3.js"></script> -->
+    <!-- <script src="test_app4.js"></script> -->
+    <!-- <script src="test_app5.js"></script> -->
+    <!-- <script src="test_app6.js"></script> -->
+    <!-- <script src="test_app7.js"></script> -->
+    <!-- <script src="test_app8.js"></script> -->
+<!--/.body-wrapper--> 
 <script src="{{ url_for('static', filename='js/jquery.js') }}"></script> 
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> 
 <script src="{{ url_for('static', filename='js/twitter-bootstrap-hover-dropdown.min.js') }}"></script> 
@@ -626,5 +658,6 @@
 <script src="{{ url_for('static', filename='js/jquery.jribbble-0.11.0.ugly.js') }}"></script> 
 <script src="{{ url_for('static', filename='js/view.min.js?auto') }}"></script> 
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/predict_app.js') }}"></script>
 </body>
 </html>
