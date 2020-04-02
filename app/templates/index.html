@@ -12,10 +12,9 @@
 <link href="static/js/google-code-prettify/prettify.css" rel="stylesheet">
 <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 <link href="static/css/color/green.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <link href="static/type/fontello.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="shortcut icon" href="../static/images/icons/favicon.ico" type="image/x-icon" />
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -36,7 +35,12 @@
 
 
 
-
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="static/css/ie8.css" media="all" />
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="static/js/html5shiv.js"></script>
+<![endif]-->
 </head>
 <body data-spy="scroll" data-target=".nav-collapse" data-offset="100">
 <div class="body-wrapper">
@@ -139,8 +143,8 @@
             <li>Looking through the data, we chose to focus on motorcyle accidents in Texas from 2014-2018. We cleaned our data using <a href="https://www.python.org/">Python</a> and <a href="https://pandas.pydata.org/">Pandas</a>, saving the new data frames out as CSV files.</li>
             <li>Reading in the output from the CSV files created above, we create a Classification Machine Learning model using <a href="https://scikit-learn.org/">SKLearn</a>, 
               utilizing the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">RandomForestClassifier</a> to make predictions based off previous accidents.</li>
-            <li>Seperate month and weekday models generated to focus on either the day of the week or month in a year to interpret risk factors associated to the date variable. Predictions appear once the form is submitted.</li>
-            <li>After utilizing our models to make educated predictions, we built a webpage that allows the user to look through the data and test their own scenarios to determine how risky future rides could be.</li>
+            <li>We also created seperate month and weekday models the strictly focused on either the day of the week or which month, to determine if there were higher risk factors associated the date. These are presented once the form is submitted.</li>
+            <li>After utilizing our models to make educated predictions, we then created an webpage that allows the user to look through our data and test their own scenarios to determine how risky future rides will be.</li>
             <li>We then chose to plot out many of our risk factors to show the user how they contribute to our model. We used <a href="https://plotly.com/">Plotly</a> and <a href="https://d3js.org/">D3</a> to make our plots.</li>
             <br>
 
@@ -308,6 +312,7 @@
           </tr>
         </table>
 
+
       </div>
       <!--/.inner--> 
     </div>
@@ -319,7 +324,7 @@
   <!-- ############################# -->
   <!--  PREDICTOR -->
   
-  <section id="showcase" class="light-wrapper">
+  <section id="lightbox" class="light-wrapper">
     <div class="section-head">
       <div class="container">
         <h1>Severity Injury Predictor</h1>
@@ -330,7 +335,7 @@
     <div class="container lightbox-wrapper">
       <div class="inner">
         <p class="lead">Please select the inputs you would like to test. Variable such as day of the week and month are calculated for all submissions.</p>
-        <div class="divide30"></div>
+        <!-- <div class="divide30"></div> -->
         <!-- <li data-transition="fade"><iframe src="static/app/templates/index.html" width="1170" height="600"></iframe></li> -->
         <h1>Severe Injury Ratings Form:</h1>
         <form method=post enctype=multipart/form-data>
@@ -492,13 +497,12 @@
             <option value="Severly Windy Weather">Severly Windy</option>
             <option value="Blowing Sand Weather">Blowing Sand</option>
           </select><br>
-          <button id="submit" type="submit" class="btn btn-default">Risk Predictor</button>
       
-          <!-- <input type=submit id= submit value=Plot> -->
+          <input type=submit id= submit value=Plot>
         </form>
         <div id="plot"></div>
         <div id="plot1"></div>
-        <script src="{{ url_for('static', filename='js/predict_app.js') }}"></script>
+        
         <!-- <ul class="filter">
           <li><a class="active" href="#" data-filter="*">All</a></li>
           <li><a href="#" data-filter=".branding">Branding</a></li>
@@ -565,53 +569,88 @@
   <section id="contact">
     <div class="section-head">
       <div class="container">
-        <h1>Contact Us</h1>
+        <h1>Get In Touch</h1>
       </div>
+      <!-- /.container --> 
     </div>
+    <!-- /.section-head -->
     <div class="parallax contact">
-      <div class="container">
+      <div class="container inner">
         <div class="row">
           <div class="span0">
-          </div>
+  
+            <!-- /.form-container --> 
+          
+          <!-- /.span8 -->
           <aside class="span4 sidebar lp10">
-            <div class="container">
-              <br>
+            <div class="sidebox widget">
+              <!-- <h4>Contact Details</h4>
+              <p>For inquiries or comments you can find us at:.</p>
+             -->
               <ul class="contact-info">
-                <h5><b>Luis Santana</b></h5>
-                <li><i class="icon-phone"></i><a href="tel:12819282021">281-928-2021</a></li>
+                <p><b>Luis Santana</b></p>
+                <li><i class="icon-location"></i> 1000 Main Street, Houston Texas 77002</li>
+                <li><i class="icon-phone"></i>281-928-2021</li>
                 <li><i class="icon-mail"></i> <a href="mailto:lasantanag@yahoo.com">lasantanag@yahoo.com</a></li>
                 <li><i style="font-size:24px" class="fa">&#xf0e1;</i><a href="https://www.linkedin.com/in/benjaminbastedo">LinkedIn</a></li>
-                <li><i class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/lasantanag">GitHub</a></li>
-              </ul><br>
+                <li><i class="fab fa-github"></i><a href="https://github.com/lasantanag">GitHub</a></li>
+              </ul>
               <ul class="contact-info">
-                <h5><b>Ben Bastedo</b></h5>
-                <li><i class="icon-phone"></i><a hreft="tel:12812531405">281-253-1405</a></li>
+                <p><b>Ben Bastedo</b></p>
+                <li><i class="icon-phone"></i>281-253-1405</li>
                 <li><i class="icon-mail"></i> <a href="mailto:bbastedo4@gmail.com">bbastedo4@gmail.com</a></li>
                 <li><i style="font-size:24px" class="fa">&#xf0e1;</i><a href="https://www.linkedin.com/in/benjaminbastedo">LinkedIn</a></li>
-                <li><i class="fa fa-github" aria-hidden="true"></i></i><a href="https://github.com/bbastedo">GitHub</a></li>
-              </ul><br>
+                <li><i class="fab fa-github"></i><a href="https://github.com/bbastedo">GitHub</a></li>
+              </ul>
               <ul class="contact-info">
-                <h5><b>Lourdes Rodriguez Milano</b></h5>
-                <li><i class="icon-phone"></i><a href="tel:12704210542">270-421-0542</a></li>
+                <p><b>Lourdes Rodriguez Milano</b></p>
+                <li><i class="icon-phone"></i>270-421-0542</li>
                 <li><i class="icon-mail"></i> <a href="mailto:lourdes.rm10@gmail.com">lourdes.rm10@gmail.com</a></li>
                 <li><i style="font-size:24px" class="fa">&#xf0e1;</i><a href="https://www.linkedin.com/in/lourdes-rodriguez-milano/">LinkedIn</a></li>
-                <li><i class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/lourdesrm">GitHub</a></li>
-              </ul><br>
+                <li><i class="fab fa-github"></i><a href="https://github.com/lourdesrm">GitHub</a></li>
+              </ul>
               <ul class="contact-info">
-                <h5><b>Luis Casas</b></h5>
-                <li><i class="icon-phone"></i><a href="tel:18322456753">832-245-6753</a></li>
+                <p><b>Luis Casas</b></p>
+                <li><i class="icon-phone"></i>832-245-6753</li>
                 <li><i class="icon-mail"></i> <a href="mailto:cosamagrande@gmail.com">cosamagrande@gmail.com</a></li>
                 <li><i style="font-size:24px" class="fa">&#xf0e1;</i><a href="https://www.linkedin.com/in/https://www.linkedin.com/in/luis-casas-779a0723/">LinkedIn</a></li>
-                <li><i class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/lasantanag">GitHub</a></li>
+                <li><i class="fab fa-github"></i><a href="https://github.com/lasantanag">GitHub</a></li>
               </ul>
               <br>
               <br>
-            </div>
+              <br>
+            </div></aside></div>
+            
+            
+            
+            <!-- /.widget 
           </aside>
-        </div> 
+          <!-- /.span4 --> 
+        <!-- </div> -->
+        <!-- /.row -->
+        <!-- <div class="clearfix"></div> -->
+      <!-- </div> -->
+      <!-- /.container -->
+    <!-- </div> -->
+    <!-- /.contact -->
+  <!-- </section> -->
+  <!-- /#contact -->
+  <footer class="light-wrapper text-center">
+   
+  </footer>
+  <!-- /footer -->
 </div> 
 
-
+<!--/.Plots--> 
+<!-- <script src="static/test_app.js"></script> -->
+    <!-- <script src="test_app2.js"></script> -->
+    <!-- <script src="test_app3.js"></script> -->
+    <!-- <script src="test_app4.js"></script> -->
+    <!-- <script src="test_app5.js"></script> -->
+    <!-- <script src="test_app6.js"></script> -->
+    <!-- <script src="test_app7.js"></script> -->
+    <!-- <script src="test_app8.js"></script> -->
+<!--/.body-wrapper--> 
 <script src="{{ url_for('static', filename='js/jquery.js') }}"></script> 
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script> 
 <script src="{{ url_for('static', filename='js/twitter-bootstrap-hover-dropdown.min.js') }}"></script> 
@@ -626,5 +665,6 @@
 <script src="{{ url_for('static', filename='js/jquery.jribbble-0.11.0.ugly.js') }}"></script> 
 <script src="{{ url_for('static', filename='js/view.min.js?auto') }}"></script> 
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/predict_app.js') }}"></script>
 </body>
 </html>
