@@ -8,6 +8,7 @@ d3.json(path).then(function(data){
 
         var data1 = {
           type: 'bar',
+          width: 0.2,
           x: helmetUse,
           y: accident,
           marker:{color: 'rgb(127,204,182)',
