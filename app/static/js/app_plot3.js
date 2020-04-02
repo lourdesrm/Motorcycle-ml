@@ -6,58 +6,67 @@ d3.json(path).then(function(data){
     var accident = data.map(d=>d.PER_TYP);
         console.log(helmetUse)
 
-    var data1 = {
-            type: 'bar',
-            x: helmetUse,
-            y: accident,
-            marker:{color: "lightgreen",
-            },
-            // mode: 'lines+markers',
-            transforms: [{
-             type: 'aggregate',
-             groups: helmetUse,
-             aggregations: [
-                {target: 'y', func: 'sum', enabled: true},
-        ]
-      }]
-    };
+        var data1 = {
+          type: 'bar',
+          x: helmetUse,
+          y: accident,
+          marker:{color: 'rgb(127,204,182)',
+          },
+          // mode: 'lines+markers',
+          transforms: [{
+           type: 'aggregate',
+           groups: helmetUse,
+           aggregations: [
+              {target: 'y', func: 'sum', enabled: true},
+      ]
+    }]
+  };
 
-    // Define layout
-    var layout = {
-        
-      yaxis: {
-      title: {text: "Number of Accidents",
-      zerolinecolor:"green",
-      font:{
-      color: 'green',
-      size: 25,
+  // Define layout
+  var layout = {
+
+    title:{text:"<b>Number of Fatalities vs. Helmet Use</b>",
+    font:{
+    color: 'black',
+    size: 28,
+    // family: 'Old Standard TT, serif',
+    }
+  },
+  size: 40,
+      
+    yaxis: {
+    title: {text: "<b>Number of Fatalities</b>",
+    zerolinecolor:"green",
+    font:{
+    color: 'green',
+    size: 26,
+    }
+    },
+
+    gridcolor:"lightgreen",
+    tickfont: {
+    // family: 'Old Standard TT, serif',
+    size: 16,
+    color: 'green',
       }
-      },
+    },
 
-      gridcolor:"lightgreen",
-      tickfont: {
-      // family: 'Old Standard TT, serif',
-      size: 16,
-      color: 'green',
-        }
-      },
-
-      xaxis: {
-      // outlinecolor:"green",
-      title:{text: "",
-      font:{
-      color: 'green',
-      size: 25,
-        }
-      },
-      tickfont: {
-      // family: 'Old Standard TT, serif',
-      size: 18,
-      color: 'darkgreen',
-        }
-      },
-    plot_bgcolor: "white",
-    paper_bgcolor:"white",
+    xaxis: {
+    // outlinecolor:"green",
+    title:{text: "",
+    font:{
+    color: 'green',
+    size: 25,
+      }
+    },
+    tickfont: {
+    // family: 'Old Standard TT, serif',
+    size: 28,
+    color: 'darkgreen',
+      }
+    },
+  plot_bgcolor: "white",
+  paper_bgcolor:"white",
 
 };
 
@@ -65,6 +74,6 @@ d3.json(path).then(function(data){
 
 
 
-    var traces = [data1]
-    Plotly.newPlot("plot", traces, layout);
-});
+  var traces = [data1]
+  Plotly.newPlot("plot", traces, layout);
+}); 
