@@ -85,7 +85,7 @@
         <ul>
           <li data-transition="fade"> <img src="static/images/group.jpg" alt="" />
             <div class="caption sfl bold bg text-center" data-x="center" data-y="220" data-speed="500" data-start="500" data-easing="easeOutExpo">Texas Motorcycle Safety Genius</div>
-            <div class="caption sfr lite bg text-center" data-x="center" data-y="359" data-speed="500" data-start="900" data-easing="easeOutExpo">A motorcyclist safety tool</div>
+            <div class="caption sfr lite bg text-center" data-x="center" data-y="359" data-speed="500" data-start="900" data-easing="easeOutExpo">A Motorcyclist Safety Tool</div>
           </li>
         </ul>
 
@@ -111,10 +111,10 @@
         <!-- /.span3 -->
         <div class="span9">
           <div class="divide10"></div>
-          <p class="lead"> Riding a motorcycle is about freedom, passion and life. But it is also about taken educated and calculated risks! Because, as many say: “motorcycles are too dangerous!” Right? </p>
+          <p class="lead"> Riding a motorcycle is about freedom, passion, and enjoying life: however, it is also about taking calculated risks using educational decision making! We want to answer the question: "how risky is riding a motorcycle?".</p>
           <p class="lead"> </p>
           <div class="divide10"></div>
-          <p>Our project attempts to shed light on several myths about the risks of riding motorcycles. We want to educate current and future motorcycles riders about the safest way to ride a motorcycle.</p>
+          <p>Our project attempts to evaluate ride risk factors associated with riding motorcycles. We want to educate motorcyclists how certain riding factors can change expected injury severity outcomes while riding.</p>
         </div>
         <!-- /.span9 --> 
       </div>
@@ -123,22 +123,24 @@
       <div class="divide80"></div>
       <div class="row">
         <div class="span6">
-          <h6>What We Do?</h6>
-          <p>We use data to learn and predict future outcomes on whatever question where we want put our atention. </p>
-          <p>We can ensure you that our data sources are reliable and our analysis strong.</p>
+          <h4>What We Do?</h4>
+          <p>We created Classification Machine Learning Models with the Random Decision Forest method to predict the injury severity of the a motorcyclists given controllable variables. </p>
+          <p>We assembled plots for the given inputs of Age, Gender, Previous Accidents, Previous Speeding Violations, Previous DWI Violations, Drug Use, Alcohol Use, Helmet Use and Desired Weather Conditions.</p>
         </div>
         <!-- /.span4 -->
         <div class="span6">
-          <h6>What is Our Process?</h6>
-          <p>Our team has over 50 years of technical experience. Our process is systematic and detailed oriented. Our process is balanced with our diverse perspectives to unsure an un-bias analysis.</p>
+          <h4>Our Process</h4>
+          <p>With over 50 years of techincal experience, our team's process is systematic, detailed oriented, and balanced with diverse perspectives to ensure an unbiased analysis.</p>
           <ol>
-            <li>We search for the best reliable data source we can get. We will use Fatal Accident Report System (FARS).</li>
-            <li>We clean and re-arrange the data to make it meaningful for our users.</li>
-            <li>We use AI and ML to get you the best safe ride possible.</li>
+            <li>We searched for a well versed dataset and decided to use the <a href="https://www.nhtsa.gov/node/97996/251">Fatal Accident Report System (FARS)</a> from the National Highway Traffic Safety Administration.</li>
+            <li>Looking through the data, we chose to focus on motorcyle accidents in Texas from 2014-2018. We cleaned our data using <a href="https://www.python.org/">Python</a> and <a href="https://pandas.pydata.org/">Pandas</a>, saving the new data frames out as CSV files.</li>
+            <li>Reading in the output from the CSV files created above, we create a Classification Machine Learning model using <a href="https://scikit-learn.org/">SKLearn</a>, 
+              utilizing the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">RandomForestClassifier</a> to make predictions based off previous accidents.</li>
+            <li>We also created seperate month and weekday models the strictly focused on either the day of the week or which month, to determine if there were higher risk factors associated the date. These are presented once the form is submitted.</li>
+            <li>After utilizing our models to make educated predictions, we then created an webpage that allows the user to look through our data and test their own scenarios to determine how risky future rides will be.</li>
+            <li>We then chose to plot out many of our risk factors to show the user how they contribute to our model. We used <a href="https://plotly.com/">Plotly</a> and <a href="https://d3js.org/">D3</a> to make our plots.</li>
             <br>
-          
 
-            <h8>Just play with the different factor and find the safest way of riding a motorcycle “Under Texan Sun”. </h8>
           </ol>
         </div>
       </div>
@@ -247,7 +249,7 @@
     <!-- /.section-head -->
     <div class="container showcase-wrapper">
       <div class="inner">
-        <p class="lead">We will plot many different varibales joihfigjgpojpjvp  opogotrgrtogpokgpodfpojdfpojgjdjds[jiodfj</p>
+        <p class="lead">We plot many different varibales to show their impact in a motorcyclist's risk factor.</p>
         <!-- <div class="divide30"></div> -->
         <!-- <ul class="filter">
           <li><a class="active" href="#" data-filter="*">All</a></li>
@@ -388,24 +390,144 @@
     <!-- /.section-head -->
     <div class="container lightbox-wrapper">
       <div class="inner">
-        <p class="lead">Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+        <p class="lead">Please select the inputs you would like to test. Variable such as day of the week and month are calculated for all submissions.</p>
         <div class="divide30"></div>
         <!-- <li data-transition="fade"><iframe src="static/app/templates/index.html" width="1170" height="600"></iframe></li> -->
         <h1>Severe Injury Ratings Form:</h1>
         <form method=post enctype=multipart/form-data>
-          <label for="Age">What is your Age?:</label>
-          <input type="text" id="Age" name="Age" placeholder="30"><br>
-          <label for="Gender">What is your Gender?:</label>
+          <label for="Age">Age of Rider:</label>
+        <select id="Age" name="Age">
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+          <option value="32">32</option>
+          <option value="33">33</option>
+          <option value="34">34</option>
+          <option value="35">35</option>
+          <option value="36">36</option>
+          <option value="37">37</option>
+          <option value="38">38</option>
+          <option value="39">39</option>
+          <option value="40">40</option>
+          <option value="41">41</option>
+          <option value="42">42</option>
+          <option value="43">43</option>
+          <option value="44">44</option>
+          <option value="45">45</option>
+          <option value="46">46</option>
+          <option value="47">47</option>
+          <option value="48">48</option>
+          <option value="49">49</option>
+          <option value="50">50</option>
+          <option value="51">51</option>
+          <option value="52">52</option>
+          <option value="53">53</option>
+          <option value="54">54</option>
+          <option value="55">55</option>
+          <option value="56">56</option>
+          <option value="57">57</option>
+          <option value="58">58</option>
+          <option value="59">59</option>
+          <option value="60">60</option>
+          <option value="61">61</option>
+          <option value="62">62</option>
+          <option value="63">63</option>
+          <option value="64">64</option>
+          <option value="65">65</option>
+          <option value="66">66</option>
+          <option value="67">67</option>
+          <option value="68">68</option>
+          <option value="69">69</option>
+          <option value="70">70</option>
+          <option value="71">71</option>
+          <option value="72">72</option>
+          <option value="73">73</option>
+          <option value="74">74</option>
+          <option value="75">75</option>
+          <option value="76">76</option>
+          <option value="77">77</option>
+          <option value="78">78</option>
+          <option value="79">79</option>
+          <option value="80">80</option>
+          <option value="81">81</option>
+          <option value="82">82</option>
+          <option value="83">83</option>
+          <option value="84">84</option>
+          <option value="85">85</option>
+          <option value="86">86</option>
+          <option value="87">87</option>
+          <option value="88">88</option>
+          <option value="89">89</option>
+          <option value="90">90</option>
+          <option value="91">91</option>
+          <option value="92">92</option>
+          <option value="93">93</option>
+          <option value="94">94</option>
+          <option value="95">95</option>
+          <option value="96">96</option>
+          <option value="97">97</option>
+          <option value="98">98</option>
+          <option value="99">99</option>
+        </select><br>
+          <label for="Gender">Gender of Rider:</label>
           <select id="Gender" name="Gender">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select><br>
-          <label for="Previous Accident">Number of Previous Accidents? (0-99):</label>
-          <input type="text" id="Previous Accident" name="Previous Accident" placeholder="0"><br>
-          <label for="Previous Speeding"> Number of Previous Speeding Violations? (0-99):</label>
-          <input type="text" id="Previous Speeding" name="Previous Speeding" placeholder="0"><br>
-          <label for="Previous DWI">Number of Previous DWI Violations? (0-99):</label>
-          <input type="text" id="Previous DWI" name="Previous DWI" placeholder="0"><br>
+          <label for="Previous Accident"># of Previous Accidents:</label>
+          <select id="Previous Accident" name="Previous Accident">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select><br>
+          <label for="Previous Speeding"> # of Previous Speeding Violations:</label>
+          <select id="Previous Speeding" name="Previous Speeding">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select><br>
+          <label for="Previous DWI"># of Previous DWI Violations:</label>
+          <select id="Previous DWI" name="Previous DWI">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select><br>
+          <!-- <input type="text" id="Previous DWI" name="Previous DWI" placeholder="0"><br> -->
           <label for="Drugs">Drug Use?:</label>
           <select id="Drugs" name="Drugs">
             <option value="No Drugs">No</option>
