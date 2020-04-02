@@ -143,8 +143,8 @@
             <li>Looking through the data, we chose to focus on motorcyle accidents in Texas from 2014-2018. We cleaned our data using <a href="https://www.python.org/">Python</a> and <a href="https://pandas.pydata.org/">Pandas</a>, saving the new data frames out as CSV files.</li>
             <li>Reading in the output from the CSV files created above, we create a Classification Machine Learning model using <a href="https://scikit-learn.org/">SKLearn</a>, 
               utilizing the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">RandomForestClassifier</a> to make predictions based off previous accidents.</li>
-            <li>We also created seperate month and weekday models the strictly focused on either the day of the week or which month, to determine if there were higher risk factors associated the date. These are presented once the form is submitted.</li>
-            <li>After utilizing our models to make educated predictions, we then created an webpage that allows the user to look through our data and test their own scenarios to determine how risky future rides will be.</li>
+            <li>Seperate month and weekday models generated to focus on either the day of the week or month in a year to interpret risk factors associated to the date variable. Predictions appear once the form is submitted.</li>
+            <li>After utilizing our models to make educated predictions, we built a webpage that allows the user to look through the data and test their own scenarios to determine how risky future rides could be.</li>
             <li>We then chose to plot out many of our risk factors to show the user how they contribute to our model. We used <a href="https://plotly.com/">Plotly</a> and <a href="https://d3js.org/">D3</a> to make our plots.</li>
             <br>
 
@@ -489,8 +489,9 @@
             <option value="Severly Windy Weather">Severly Windy</option>
             <option value="Blowing Sand Weather">Blowing Sand</option>
           </select><br>
+          <button id="submit" type="submit" class="btn btn-default">Risk Predictor</button>
       
-          <input type=submit id= submit value=Plot>
+          <!-- <input type=submit id= submit value=Plot> -->
         </form>
         <div id="plot"></div>
         <div id="plot1"></div>

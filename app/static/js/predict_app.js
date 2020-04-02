@@ -133,18 +133,19 @@ function buildPlot() {
         autorange: true,
         type: "linear"
       }
-    };
+    }
 
     Plotly.newPlot("plot1", response2, layout);
   });
 }
 
-// // Submit Button handler
+// Submit Button handler
 // function handleSubmit() {
-// //   // Prevent the page from refreshing
-//   d3.event.preventDefault();
 
-// //   // Select the input value from the form
+  // Prevent the page from refreshing
+  // d3.event.preventDefault();
+
+  // Select the input value from the form
 //   var weather = d3.select("#Weather").node().value;
 //   console.log(weather);
 
@@ -155,5 +156,5 @@ function buildPlot() {
   buildPlot();
 // };
 
-// // // Add event listener for submit button
+// // Add event listener for submit button
 // d3.select("#submit").on("click", handleSubmit);
