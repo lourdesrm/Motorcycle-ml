@@ -28,24 +28,23 @@ d3.json(path).then(function(data){
     title:{text:"<b>Number of Accidents vs. Day of the Week</b>",
     font:{
     color: 'black',
-    size: 28,
+    size: 20,
     // family: 'Old Standard TT, serif',
     }
   },
-  size: 40,
   yaxis: {
   title: {text: "<b>Number of Accidents</b>",
   zerolinecolor:"green",
   font:{
   color: 'darkblue',
-  size: 26,
+  size: 16,
   }
   },
 
   gridcolor:"lightblue",
   tickfont: {
   // family: 'Old Standard TT, serif',
-  size: 16,
+  size: 13,
   color: 'green',
     }
   },
@@ -55,12 +54,12 @@ d3.json(path).then(function(data){
   title:{text: "",
   font:{
   color: 'green',
-  size: 25,
+  size: 16,
     }
   },
   tickfont: {
   // family: 'Old Standard TT, serif',
-  size: 28,
+  size: 13,
   color: 'darkgreen',
     }
   },

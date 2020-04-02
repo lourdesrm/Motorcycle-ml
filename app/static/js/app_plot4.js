@@ -10,7 +10,7 @@ d3.json(path).then(function(data){
 
         var data1 = {
           type: 'bar',
-          width: 0.2,
+          width: 0.25,
           x: drink,
           y: accident,
           marker:{color: 'rgb(143,175,242)',
@@ -34,25 +34,24 @@ d3.json(path).then(function(data){
     title:{text:"<b>Number of Accidents vs. Presence of Alcohol</b>",
       font:{
       color: 'black',
-      size: 28,
+      size: 20,
       // family: 'Old Standard TT, serif',
       }
     },
-    size: 40,
 
     yaxis: {
     title: {text: "<b>Number of Accidents</b>",
     zerolinecolor:"greenblue",
     font:{
     color: 'darkblue',
-    size: 26,
+    size: 16,
     }
     },
 
     gridcolor:"lightblue",
     tickfont: {
     // family: 'Old Standard TT, serif',
-    size: 16,
+    size: 13,
     color: 'darkblue',
       }
     },
@@ -62,12 +61,12 @@ d3.json(path).then(function(data){
     title:{text: "<b>Presence of Alcohol</b>",
     font:{
     color: 'darkblue',
-    size: 26,
+    size: 16,
       }
     },
     tickfont: {
     // family: 'Old Standard TT, serif',
-    size: 18,
+    size: 13,
     color: 'darkblue',
       }
     },

@@ -22,8 +22,8 @@ d3.json(path).then(function(data){
     var data = [trace];
     var layout = {
         title: "Type of Injury",
-        height: 600,
-        width: 600
+        height: 200,
+        width: 200
     };
     Plotly.newPlot("plot", data, layout);
 })
